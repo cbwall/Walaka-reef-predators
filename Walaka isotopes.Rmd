@@ -28,7 +28,9 @@ pacman::p_load("knitr", "ggord", "MASS", "tidyverse", "plyr", "dplyr", "gridExtr
 ```
 
 ### Data 
-Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope valyes for Giant trevally and Galapagos sharks from the Northwestern Hawaiian Islands, at French Frigate Shoals atoll. We also include data used to calculate residence index using telemetry, as well as info on tagging dates and consumer fork length. Lastly, we incorporate the data from Skinner et al. (2021) reporting δ^13^C isotope values for essential amino acids (EAAs) collected inshore and offshore of coral reefs in the Maldives. These are used as trianing data to assign fish consumers and determine the proportion support of foodweb support to consumers.  
+Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope values for Giant trevally (*Caranx ignobilis*) and Galapagos sharks (*Carcharhinus galapagensis*) from the Northwestern Hawaiian Islands, at French Frigate Shoals atoll ('ōlelo Hawai'i: *Lalo* or *Mokupāpapa*). We also include data used to calculate residence index using telemetry, as well as info on tagging dates and consumer fork length. Lastly, we incorporate the data from `Skinner et al. (2021)` reporting δ^13^C isotope values for essential amino acids (EAAs) collected inshore and offshore of coral reef fishes and invertebrates (plankton and squid) in the Maldives. These are used as trianing data to assign fish consumers and determine the proportion support of foodweb support to consumers.  
+
+`Skinner, C., Mill, A. C., Fox, M. D., Newman, S. P., Zhu, Y., Kuhl, A., & Polunin, N. V. C. (2021). Offshore pelagic subsidies dominate carbon inputs to coral reef predators. In Sci. Adv (Vol. 7).`
 
 ```{r load data, echo=FALSE}
 # load data
@@ -43,7 +45,9 @@ norm.df<-na.omit(norm.df)
 ```
 
 ### Linear Discriminant Analysis
-Subset the data and use 'sources' to generate training data that will later be used to assign consumer. It is important that sources are distinct and have high accuracy in their assignment, otherwise they may not be informative as distinct energy channels/prey items.  
+Subset the data and use 'sources' to generate training data that will later be used to assign consumer. It is important that sources are distinct and have high accuracy in their assignment, otherwise they may not be informative as distinct energy channels/prey items.   
+  
+Source groups consisted of coral reef consumers, including fishes, plankton, and squid, which reflect the primary producers of their respective habitats (benthic versus pelagic) and food webs (inshore versus offshore). Three source groups were used: “reef-associated plankton” represented by diurnal (*Caesio varilineata*, *Caesio xanthonota*) and nocturnal fishes (*Myripristis violacea*); “pelagic plankton” derived from squid (*Uroteuthis duvaucelii*); and “coral” derived from coralivorous fish (*Chaetodo meyeri*) found in Skinner et al. (2021).
 
 ```{r LDA}
 ########## LDA setup
@@ -77,7 +81,7 @@ reclass<-diag(prop.table(All.reclass, 1))
 All.reclass
 ```
 
-Show the training data with the coeddicients of linear discriminants and proportion f trace for LD1 and LD2. This shows the EAA that are driving patterns across the data visualization, as well as the % trace explained on each axis. Here 79% of variation is explained by PC1 and this is strongly affected by threonine (Thr) and phenylalanine (Phe).  
+Show the training data with the coefficients of linear discriminants and proportion of trace for LD1 and LD2. This shows the EAA that are driving patterns across the data visualization, as well as the % trace explained on each axis. Here 79% of variation is explained by PC1 and this is strongly affected by threonine (Thr) and phenylalanine (Phe).  
 
 ```{r LDA output, fig.show='hide'}
 #Create a training LDA function from the library data
@@ -116,7 +120,9 @@ AllProdPredict <- data.frame(SampleID = prod$SampleID, Group = prod$Group, LD.cl
 write.csv(AllProdPredict, "output/Walak_LDA_coords.csv", row.names = FALSE)
 ```
 
-CLassidy consumers (giant trevally or Galapagos sharks) as belonging to the three source groups. We show the classification gives about 1/2 of the trevally as inshore vs. offshore, with 3 of 4 sharks being inshore.
+Classify consumers (giant trevally or Galapagos sharks) as belonging to the three source groups. 
+
+- *We show* the classification gives about 1/2 of the trevally as inshore vs. offshore, with 3 of 4 sharks being inshore.
 ```{r LDA classify consumers}
 ####### ######## ######## ######## #####
 ######## Classify Trevaly and Sharks ####
@@ -159,7 +165,7 @@ write.csv(raw.norm.LD.data, "output/Walak_LDA.data.compiled.csv")
 ```
 
 Plot the LDA with producer groups and the consumers.
-```{r LDA figure, fig.cap="**Figure 6.** Figure 6. Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
+```{r LDA figure, fig.cap="**Figure 6.** Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
 #### plot it
 raw.norm.LD.data$Group<-factor(raw.norm.LD.data$Group, 
                       levels=c("PelagicPlankton", "ReefPlankton", "Coral", 
@@ -205,7 +211,7 @@ Mix.df.EAA.consm$Group <- droplevels(Mix.df.EAA.consm$Group)
 Mix.df.EAA.consm<-na.omit(Mix.df.EAA.consm)
 
 # write and export a csv of the data frame
-write.csv(Mix.df.EAA.consm, "output/Walak_Mix.df.EAAn.consumer.csv", row.names = FALSE)
+write.csv(Mix.df.EAA.consm, "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv", row.names = FALSE)
 
 ###########
 # SOURCES #
@@ -290,7 +296,7 @@ Now, load in the consumers. We use a TDF of 0 (with SD of 0) assuming direct rou
 ```{r load consumers}
 # load consumer data and assign factors
 # SampleID is a fixed factor
-cons.EAAn <- load_mix_data(filename = "output/Walak_Mix.df.EAAn.consumer.csv",
+cons.EAAn <- load_mix_data(filename = "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv",
                           iso_names = c("Thrn", "Valn", "Leun", "Phen", "Lysn"),
                           factors = "SampleID",
                           fac_random = FALSE,
@@ -309,7 +315,7 @@ discr.EAAn <- load_discr_data(filename = "output/EAAn_Mix/MixSIAR_EAAn_TDFs.csv"
 ```
 
 Set up here for the model (JAGs), run the model and save the output as an R.data file (can be memory intensive).
-```{r MixSIAR model Jags, cache=TRUE}
+```{r MixSIAR model Jags, cache=TRUE, results='hide'}
 ################## ################## ################# 
 ################## RUN MIXSIAR MODEL BY SAMPLEID #######
 
@@ -431,7 +437,7 @@ write.csv(Samp.out.cleaned.EAAn.3, "output/EAAn_Mix/MixSIAR_SampleID.df.EAAn.3so
 #### 3 source MixSIAR plot 
 Plot of three sources and their contribution to consumers.
 
-```{r 3 sources MixSIAR, results='hide', fig.cap="**Figure 7a.** Results of the MixSIAR Bayesian mixing model using δ13CEAA fingerprints. Proportional contribution of pelagic plankton, reef-associated plankton and corals to giant trevally and Galapagos sharks."}
+```{r 3 sources MixSIAR, results='hide', fig.cap="**Figure 7a.** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of pelagic plankton, reef-associated plankton and corals to Giant trevally and Galapagos sharks."}
 ################## ready to plot ################## 
 
 # bring in some metadata to make sense of it
@@ -561,9 +567,9 @@ Res.sum<-summary(Res.Inshore.mod)
 anova(Res.Inshore.mod)
 ```
 
-#### Residency by proportion of inshore foodweb support. 
+#### Residency by proportion of inshore foodweb support 
 
-```{r residency by inshore proportion EAA, *fig.cap=**Figure 7B.* Relationship between the proportion of inshore carbon sources utilized versus and the predator residency index. The correlation is significant (ANOVA, f = 7.64, p = 0.015)"}
+```{r res by inshore proportion EAA, fig.cap="**Figure 7B.** Relationship between the proportion of inshore carbon sources utilized versus and the predator residency index. The correlation is significant (ANOVA, f = 7.64, p = 0.015)"}
 Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
   geom_smooth(method = lm, color="seagreen", alpha=0.2, fill="mediumseagreen")+
   geom_point(color="seagreen", size=2.5, aes(shape=Group))+
