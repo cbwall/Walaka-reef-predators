@@ -1,0 +1,24 @@
+Call:
+lda(Group ~ Thr + Val + Leu + Phe + Lys, data = prod)
+
+Prior probabilities of groups:
+          Coral PelagicPlankton    ReefPlankton 
+      0.2142857       0.1904762       0.5952381 
+
+Group means:
+                       Thr       Val       Leu       Phe       Lys
+Coral            -8.378889 -21.12333 -19.74556 -15.02444 -12.83556
+PelagicPlankton  -8.485000 -22.72750 -23.35125 -24.77125 -16.25500
+ReefPlankton    -13.307200 -24.07960 -23.55920 -21.27280 -18.21480
+
+Coefficients of linear discriminants:
+             LD1         LD2
+Thr  1.226787772 -0.47940410
+Val -0.071830357  0.66667233
+Leu -0.269481800 -0.14587473
+Phe -1.480860015  0.09941465
+Lys  0.009195137 -1.08451168
+
+Proportion of trace:
+   LD1    LD2 
+0.7913 0.2087 
