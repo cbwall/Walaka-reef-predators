@@ -11,7 +11,14 @@ output:
 editor_options: 
   chunk_output_Type: console
 ---
+## Project Overview 
+Extreme storms can rapidly devastate coral reefs, yet their consequences for apex predators remain unclear. We combined year-long acoustic monitoring of 25 tagged predators (giant trevally *Caranx ignobilis*, Galapagos sharks *Carcharhinus galapagensis*, tiger sharks *Galeocerdo cuvier*) at French Frigate Shoals (Hawaiʻi) with bulk and compound-specific amino-acid stable isotope analyses of pre-storm muscle tissue to assess survival, space use, and trophic pathways surrounding Category-4 Hurricane Walaka (October 2018). 
 
+<center>  
+  
+![**Image**. Giant trevally (*Caranx ignobilis*) in the Northwestern Hawaiian Islands.](output/photos/ulua3-Maro-north.CW.jpg){width=80%}
+ 
+</center>  
 ```{r setup, include=FALSE}
 if (!require('knitr')) install.packages('knitr'); library('knitr')
 knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.align='center')
