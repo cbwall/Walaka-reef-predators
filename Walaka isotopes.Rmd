@@ -124,7 +124,7 @@ write.csv(lda.info, "output/Walak_LDA_loadings.csv", row.names=FALSE)
 AllProdPredict <- data.frame(SampleID = prod$SampleID, Group = prod$Group, LD.class = "Source", predict(All.train)$x)
 
 #Write a csv file for the LDA coordinates
-write.csv(AllProdPredict, "output/Walak_LDA_coords.csv", row.names = FALSE)
+write.csv(AllProdPredict, "output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
 ```
 
 Classify consumers (giant trevally or Galapagos sharks) as belonging to the three source groups. 
@@ -152,7 +152,7 @@ All.reclass
 ```{r stich dfs, echo=FALSE}
 ###### ###### write and compile data outputs from LDA
 # write a csv file for the consumer LDA info
-write.csv(cons.predict.data, "output/Walak_LDA_info.csv", row.names=FALSE)
+write.csv(cons.predict.data, "output/Walak_LDA_cons_pred.csv", row.names=FALSE)
 
 # combine the consumer data and source LDA #
 LDA.df<-rbind(cons.predict.data, AllProdPredict)
@@ -341,14 +341,14 @@ set.seed(12)
 consm.jags.mod.EAAn <- run_model(run = "normal", cons.EAAn, source.EAAn, discr.EAAn, model_filename.EAA, alpha.prior = 1, resid_err, process_err)
 
 #save RDS object of JAGS model
-saveRDS(consm.jags.mod.EAAn, file = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_rjags.rds")
+saveRDS(consm.jags.mod.EAAn, file = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_rjags_norm.rds")
 
 # code below will read back in the RDS object
-consm.jags.mod.EAAn <- readRDS(file = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_rjags.rds")
+consm.jags.mod.EAAn <- readRDS(file = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_rjags_norm.rds")
 ```
 
 Generate plots for MixSIAR diagnostics and perform source aggregation.
-```{r MixSIAR diagnostics, eval=FALSE}
+```{r MixSIAR diagnostics, fig.show='hide', resuts='hide'}
 # note the processing here opens files in quartz and results in an issue with knitting. This is why code chunk is set to "eval = FALSE". Code runs otherwise.
 
 # process diagnostics, summary stats, and posterior plots
@@ -395,7 +395,13 @@ plot_intervals(consm.in.out.combined.EAAn, toplot = "fac1")
 dev.copy(pdf, "output/MixSIAR_models/EAAn_SampleID_model/combines_output_intervals.EAAn.pdf", width=10, height=10)
 dev.off()
 
-# summary statistics for a posteriori aggregation of sources (inshore vs offshore)
+#### # summary statistics for a posteriori aggregation of sources (inshore vs offshore)
+# ***** NOTE ***** you will need to create a blank txt file if you run and re-run the aggregation. The file is not overwritten when you re-save in summary_stat(...). It will add outputs sequentially, which will make life terrible and code not-reproducible.
+
+# make blank txt if re-running summary_stat(...)
+file.create("output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_SampleID_summary_stats_a_posteriori.EAAn.txt")
+
+# run summary_stat and save output
 summary_stat(consm.in.out.combined.EAAn, toprint = "fac1", meanSD = TRUE, savetxt = TRUE,
              quantiles = c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975),
              filename = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_SampleID_summary_stats_a_posteriori.EAAn")
@@ -438,7 +444,7 @@ Samp.out.cleaned.EAAn.3 <- Samp.out.cleaned.EAAn.3 %>%
 
 Samp.out.cleaned.EAAn.3<-Samp.out.cleaned.EAAn.3[-1,]
 
-write.csv(Samp.out.cleaned.EAAn.3, "output/EAAn_Mix/MixSIAR_SampleID.df.EAAn.3sources.csv", row.names = FALSE)
+write.csv(Samp.out.cleaned.EAAn.3, "output/EAAn_Mix/Walak_MixSIAR_SampleID.df.EAAn.3sources.csv", row.names = FALSE)
 ```
 
 #### 3 source MixSIAR plot 
@@ -538,7 +544,7 @@ Mix.samp.EAAn.2$Source <- factor(Mix.samp.EAAn.2$Source,
                                  levels = c("Offshore", "Inshore"))
 Mix.samp.EAAn.2$Mean<-as.numeric(Mix.samp.EAAn.2$Mean) 
 
-write.csv(Mix.samp.EAAn.2, "output/Walak_Mix.samp.EAAn.2.csv")
+write.csv(Mix.samp.EAAn.2, "output/Walak_Mix.samp.EAAn.2sources.csv")
 
 ########### plot
 Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Mean, fill = Source)) +
@@ -563,6 +569,7 @@ Her we use the residency index, or the events where the consumers were recorded 
 We show that there is a significant correlation between the residency index and the % inshore food web use, dominated by the Giant trevlly, which are best represented in our dataset. This relationship is unchanged by the presence or absence of sharks in the data.
 ```{r residency by inshore proportion EAA}
 Inshore.df<-Mix.samp.EAAn.2[(Mix.samp.EAAn.2$Source=="Inshore"),]
+# write.csv(Inshore.df, "output/Inshore.df.csv")
 
 # group mean model
 Inshore.mod<-lm(Mean~Group, data=Inshore.df) #p=0.974, no difference in % inshore by group
