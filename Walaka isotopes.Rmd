@@ -31,7 +31,7 @@ if (!require("pacman")) install.packages("pacman") # for rapid install if not in
 
 # use pacman to load all the packages you are missing!
 pacman::p_load("knitr", "ggord", "MASS", "tidyverse", "plyr", "dplyr", "gridExtra", 
-               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes")
+               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes", 'SIBER', )
 ```
 
 ### Data 
@@ -39,9 +39,199 @@ Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope values for
 
 `Skinner, C., Mill, A. C., Fox, M. D., Newman, S. P., Zhu, Y., Kuhl, A., & Polunin, N. V. C. (2021). Offshore pelagic subsidies dominate carbon inputs to coral reef predators. In Sci. Adv (Vol. 7).`
 
+```{r Siber}
+### BULK d13C-d15N BIPLOT AND STANDARD ELLIPSES### 
+
+# load the SIBER package: library(SIBER)
+# load the data: library(dplyr)
+
+# load bulk data 
+All.data<-read.csv("data/Walak_Trevl_Gshark.csv")
+
+# subset to be only bulk d13C and d15N
+df.bulk<- All.data %>%
+  select(Group, d13C_bulk, d15N_bulk)
+
+df.bulk<-na.omit(df.bulk) # remove NAs
+
+# make levels for Siber
+df.bulk$group<- ifelse(df.bulk$Group=="GT", "1", "2")
+df.bulk$community<- ifelse(df.bulk$Group=="GT", "1", "2")
+
+# rename d13C as "iso1", and d15N as "iso2", remove Group
+df.Siber<- df.bulk %>% 
+  dplyr::rename(iso1 = d13C_bulk, iso2 = d15N_bulk) %>%
+  select(-Group)
+
+# create the siber object
+siber <- createSiberObject(df.Siber)
+
+# create lists of plotting arguments to be passed onwards to each of the three plotting functions
+community.hulls.args <- list(col = 1, lty = 1, lwd = 1)
+group.ellipses.args  <- list(n = 100, p.interval = 0.4, 
+                             lty = 1, lwd = 2)
+group.hull.args      <- list(lty = 2, col = "grey20")
+
+# ellipses and group.hulls are set to TRUE or T for short to force their plotting
+par(mfrow=c(1,1))
+plotSiberObject(siber,
+                ax.pad = 2, 
+                hulls = F, community.hulls.args, 
+                ellipses = T, group.ellipses.args,
+                group.hulls = T, group.hull.args,
+                bty = "L",
+                iso.order = c(1,2),
+                xlab = expression({delta}^13*C~'‰'),
+                ylab = expression({delta}^15*N~'‰')
+)
+
+# calculate summary statistics for each group: TA, SEA and SEAc
+group.ML <- groupMetricsML(siber)
+print(group.ML)
+
+# add a legend
+legend("topright", colnames(group.ML), 
+       pch = c(1,2), col = c(1:2), lty = 1)
+
+# use Bayesian Inference to calculate uncertainty around ellipses
+# options for running jags
+parms <- list()
+parms$n.iter <- 2 * 10^4   # number of iterations to run the model for
+parms$n.burnin <- 1 * 10^3 # discard the first set of values
+parms$n.thin <- 10     # thin the posterior by this many
+parms$n.chains <- 2        # run this many chains
+
+# define the priors
+priors <- list()
+priors$R <- 1 * diag(2)
+priors$k <- 2
+priors$tau.mu <- 1.0E-3
+
+# fit the ellipses which uses an Inverse Wishart prior on the covariance matrix Sigma, and a vague normal prior on the means
+# fitting is via the JAGS method
+ellipses.posterior <- siberMVN(siber, parms, priors)
+
+# the posterior estimates of the ellipses for each group can be used to calculate the SEA.B for each group.
+SEA.B <- siberEllipses(ellipses.posterior)
+
+siberDensityPlot(SEA.B, xticklabels = colnames(group.ML), 
+                 xlab = c("Community | Group"),
+                 ylab = expression("Standard Ellipse Area " ('‰' ^2) ),
+                 bty = "L",
+                 las = 1,
+                 main = "SIBER ellipses on each group",
+                 ylim = c(0, 4) 
+)
+
+# add red x's for the ML estimated SEA-c
+points(1:ncol(SEA.B), group.ML[3,], col="red", pch = "x", lwd = 2)
+
+# calculate some credible intervals 
+cr.p <- c(0.95, 0.99) # vector of quantiles
+
+# call to hdrcde:hdr using lapply()
+SEA.B.credibles <- lapply(
+  as.data.frame(SEA.B), 
+  function(x,...){tmp<-hdrcde::hdr(x)$hdr},
+  prob = cr.p)
+
+print(SEA.B.credibles)
+
+# do similar to get the modes, taking care to pick up multimodal posterior distributions if present
+SEA.B.modes <- lapply(
+  as.data.frame(SEA.B), 
+  function(x,...){tmp<-hdrcde::hdr(x)$mode},
+  prob = cr.p, all.modes=T)
+
+print(SEA.B.modes)
+
+
+### BOXPLOTS, ANOVA AND CORRELATIONS WITH RESIDENCY_INDEX###
+
+# load ggplot2 package: library(ggplot2)
+# load the data: library(dplyr)
+AA.indic <- All.data %>%
+  dplyr::select(Group, Residency.index, Residency, d15N_SAA, TPGlx_Phe, TPAla_Phe, PTS)
+
+AA.indic<-na.omit(AA.indic)
+
+# boxplots high residency (Residency_index ≥ 0.1, ∼inshore) vs low residency (Residency_index < 0.1, ∼offshore) 
+boxplot(d15N_SAA ~ Residency, data = AA.indic,
+        col=c("lightgreen","lightcoral"),
+        ylab="δ15NSAA", xlab="Residency")
+boxplot(TPGlx_Phe ~ Residency, data = AA.indic,
+        col=c("lightgreen","lightcoral"),
+        ylab="TPGlx_Phe", xlab="Residency")
+boxplot(TPAla_Phe ~ Residency, data = AA.indic,
+        col=c("lightgreen","lightcoral"),
+        ylab="TPAla_Phe", xlab="Residency")
+boxplot(PTS ~ Residency, data = AA.indic,
+        col=c("lightgreen","lightcoral"),
+        ylab="PTS", xlab="Residency")
+
+# ANOVA
+model <- aov(d15N_SAA ~ Residency, data = AA.indic)
+print(summary(model))
+model <- aov(TPGlx_Phe ~ Residency, data = AA.indic)
+print(summary(model))
+model <- aov(TPAla_Phe ~ Residency, data = AA.indic)
+print(summary(model))
+model <- aov(PTS ~ Residency, data = AA.indic)
+print(summary(model))
+
+# correlations with Residency_index
+# list of variables to analyze
+vars <- c("d15N_SAA", "TPGlx_Phe", "TPAla_Phe", "PTS")
+
+# data frame to store results
+results <- data.frame()
+
+# linear regression and plotting for each variable
+for (var in vars) {
+# fit linear model
+model <- lm(AA.indic[[var]] ~ AA.indic$Residency.index)
+summary_model <- summary(model)
+  
+# save results in the results data frame
+results <- rbind(results, data.frame(
+    Variable = var,
+    Intercept = coef(model)[1],
+    Slope = coef(model)[2],
+    R2 = summary_model$r.squared,
+    p_value = summary_model$coefficients[2,4]
+  ))
+  
+# plot using ggplot2
+  p <- ggplot(AA.indic, aes(x = Residency.index, y = .data[[var]])) +
+    geom_point(aes(color = Group), size = 2) +
+    geom_smooth(method = "lm", se = TRUE, color = "blue", fill = "lightblue") +
+    theme_minimal() +
+    labs(x = "Residency index",
+         y = var)
+  
+  print(p)
+}
+
+# display results
+print(results)
+```
+
 ```{r load data, echo=FALSE}
-# load data
+# load data or Carbon EAAs
 df<-read.csv("data/Walak_Trevl_Gshark.csv")
+
+# simplify nmes
+df<- df %>%
+  dplyr::rename(Thr = d13CThr,
+         Val = d13CVal,
+         Leu = d13CLeu, 
+         Phe = d13CPhe, 
+         Lys = d13CLys,
+         Thrn = d13CThr.norm,
+         Valn = d13CVal.norm,
+         Leun = d13CLeu.norm, 
+         Phen = d13CPhe.norm, 
+         Lysn = d13CLys.norm)
 
 # parse data
 raw.df<- df %>% dplyr::select(SampleID, Group, Thr, Val, Leu, Phe, Lys)
@@ -496,7 +686,7 @@ Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean, 
 
 #print and save
 Mix.samp.plot.EAAn.3
-dev.copy(pdf, "figures/Walak_Fig.mixsiar.3sour.EAAn.pdf", width = 6, height = 7)
+dev.copy(pdf, "figures/Walak_Fig.mixsiar.3sour.EAAn.pdf", width = 6, height = 5)
 dev.off()
 ```
 
@@ -569,7 +759,7 @@ Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Me
 
 #print and save grouped with 2 categories
 Mix.samp.plot.EAAn.InOff
-dev.copy(pdf, "figures/Walak_Fig.mixsiar.2sour.EAAn.pdf", width = 4, height = 7)
+dev.copy(pdf, "figures/Walak_Fig.mixsiar.2sour.EAAn.pdf", width = 4, height = 5)
 dev.off()
 ```
 
@@ -607,9 +797,9 @@ Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
   geom_point(color="seagreen", size=2.5, aes(shape=Group))+
   ylab("Proportion Inshore-EAA")+
   xlab("Residency Index")+
-  annotate("text", x = 0.08, y = 0.68, label = "Adj-R2=0.55, p<0.001", size = 3) +
+  annotate("text", x = 0.10, y = 0.68, label = "Adj-R2=0.55, p<0.001", size = 3) +
   theme_classic()
 
 Inshore.prop.plant
-ggsave("figures/Walak_Inshore.prop.EAAn.pdf", width=5, height=7)
+ggsave("figures/Walak_Inshore.prop.EAAn.pdf", width=5, height=5)
 ```
