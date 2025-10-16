@@ -953,7 +953,7 @@ dev.off()
 ```
 
 ### Residency index
-Her we use the residency index, or the events where the consumers were recorded by receiver arrays at Fish Frigate Shoals relative to the days the receivers were recording, to compare the proportion of inshore food web support to consumers.
+Here we use the residency index, or the events where the consumers were recorded by receiver arrays at French Frigate Shoals relative to the days the receivers were recording, to compare the proportion of inshore food web support to consumers.
 
 We show that there is a significant correlation between the residency index and the % inshore food web use, dominated by the Giant trevlly, which are best represented in our dataset. The relationship is significant R~2~ = 0.55 and *p*<0.001.
 ```{r residency by inshore proportion EAA}
