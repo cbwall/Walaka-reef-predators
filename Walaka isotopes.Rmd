@@ -16,7 +16,7 @@ Extreme storms can rapidly devastate coral reefs, yet their consequences for ape
 
 <center>  
   
-![**Image**. Giant trevally (*Caranx ignobilis*) in the Northwestern Hawaiian Islands.](output/photos/ulua3-Maro-north.CW.jpg){width=80%}
+![**Image**. Giant trevally (*Caranx ignobilis*) in the Northwestern Hawaiian Islands. *Photo credit*: C. Wall](output/photos/ulua3-Maro-north.CW.jpg){width=80%}
  
 </center>  
 ```{r setup, include=FALSE}
@@ -35,7 +35,7 @@ pacman::p_load("knitr", "ggord", "MASS", "tidyverse", "plyr", "dplyr", "gridExtr
 ```
 
 ### Data Description
-Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope values for Giant trevally (*Caranx ignobilis*) and Galapagos sharks (*Carcharhinus galapagensis*) from the Northwestern Hawaiian Islands, at French Frigate Shoals atoll ('ōlelo Hawai'i: *Lalo* or *Mokupāpapa*). We also include data used to calculate residence index using telemetry, as well as info on tagging dates and consumer fork length. Lastly, we incorporate the data from `Skinner et al. (2021)` reporting δ^13^C isotope values for essential amino acids (EAAs) collected inshore and offshore of coral reef fishes and invertebrates (plankton and squid) in the Maldives. These are used as trianing data to assign fish consumers and determine the proportion support of foodweb support to consumers.  
+Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope values for Giant trevally (*Caranx ignobilis*) and Galapagos sharks (*Carcharhinus galapagensis*) from the Northwestern Hawaiian Islands, at French Frigate Shoals atoll ('ōlelo Hawai'i: *Lalo* or *Mokupāpapa*). We also include data used to calculate residence index using telemetry, as well as info on tagging dates and consumer fork length. Lastly, we incorporate the data from `Skinner et al. (2021)` reporting δ^13^C isotope values for essential amino acids (EAAs) collected inshore and offshore, using coral reef fishes and invertebrates (plankton and squid) in the Maldives. These are used as training data to assign fish consumers and determine the proportion support of food web support to consumers.  
 
 `Skinner, et al,. 2021. Offshore pelagic subsidies dominate carbon inputs to coral reef predators. Science advances 7.`
 
@@ -212,12 +212,41 @@ print(SEA.B.modes)
 ```
 
 ### δ^15^N Amino Acid Analysis
-Amino acid (AA) nitrogen isotope analysis δ^15^N is uses Source-AAs (notably Glutamic Acid [Glx] that are integrated into consumers and reflect the base of the food web. These internal baselines are combined with Trophic-AA (notably Phenylalanne [Phe]) analysis to obtain better resolution into trophic positions (TP) of consumers. In areas were protists are important in food webs, there can be a "missing step" in trophic position (so called, "Protistan Trophic Position"). This is resolved by substituting Alanine (Ala) for Glx in TP calculations.  
+Amino acid (AA) nitrogen isotope analysis δ^15^N is uses Source-AAs (notably Glutamic Acid [Glx] that are integrated into consumers and reflect the base of the food web. These internal baselines are combined with Trophic-AA (notably Phenylalanine [Phe]) analysis to obtain better resolution into trophic positions (TP) of consumers. In areas were protists are important in food webs, there can be a "missing step" in trophic position (so called, "Protistan Trophic Position"). This is resolved by substituting Alanine (Ala) for Glx in TP calculations.  
 
 `Y. Chikaraishi, et al. Limnol Oceanogr Methods 7, 740–750 (2009)`. 
 `M. Décima, et al. Limnol Oceanogr 62, 2308–2322 (2017)`.  
+  
+#### Calculations
+
+**Equation 1 and 2.** *Trophic position of fishes using AA-Glx and Phe, with calculations based on two approaches.  
+ $${TP_{Glx-Phe}} = \frac{(δ^{15}N_{Glx}~ - δ^{15}N_{Phe} - \beta)}{TDF} +1$$   
+ 
+- In this equation, *β* is the difference between δ~15~N values between Glx and Phe in marine primary producers, while TDF denotes the trophic discrimination factor, representing the ~15~N enrichment between Glx and Phe per trophic level. `Here we adopt β = 3.4‰ and TDF = 7.6‰ for fishes`.      
+- We also report `TP~Glx-Phe~ using TDF = 5.9‰`, originally developed for sharks and rays.  
+
+**Equation 3.**  *Trophic position  of fishes using AA-Ala and Phe, with calculations following `Decima et al (2017)`.
+ $${TP_{Ala-Phe}} = \frac{(δ^{15}N_{Ala}~ - δ^{15}N_{Phe} - \beta)}{TDF} +1$$
+   
+- Additionally, we calculated TP using δ~15~N values of Ala and Phe (TP~Ala-Phe~), which account for the contribution of protists, with `β = 3.2‰`, representing the δ~15~N difference between Ala and Phe in marine primary producers, and `TDF = 4.5‰`, representing the ~15~N enrichment between Ala and Phe per trophic level.  
+  
+**Equation 4.** *Protistan Trophic Steps.*
+$$PTS = (δ^{15}N_{Ala-Phe}~ - δ^{15}N_{Glx-Phe})$$
+
+- Protistan trophic steps (i.e.,PTS) recorded in trevally and sharks was estimated using the difference between TP~Ala-Phe~ and TP~Glx-Phe~.
+
+**Equation 5.** *Average source amino acid δ~15~N.*
+$$δ^{15}N_{SAA} = mean(δ^{15}N_{Phe}~ + δ^{15}N_{Lys})$$
+  
+- To assess changes in nitrogen sources at the base of the food web, we calculated the average δ^15^N values of the source AAs, Phe and Lys, collectively referred to as δ^15^N~SAA~ 
+
 
 ```{r df smithing}
+
+
+# info on calculations
+
+
 ### BOXPLOTS, ANOVA AND CORRELATIONS WITH RESIDENCY_INDEX###
 
 # load ggplot2 package: library(ggplot2)
@@ -252,8 +281,8 @@ dev.off()
 
 Run for loops to create boxplots of δ^15^N amino acid metrics with fish residency. Here we use two categories for residency based on residency scores.  
 
-- low inshore residency = scores of < 0.1, classified as "offshore". 
-- high inshore residency = scores >=0.1, classified as "inshore"
+- **low inshore residency** = scores of < 0.1, classified as "offshore". 
+- **high inshore residency** = scores >=0.1, classified as "inshore"
 
 ```{r boxplot and regression for residency, results='hide', fig.show='hide'}
 #### #### #### #### #### #### #### 
@@ -404,7 +433,7 @@ norm.df<-na.omit(norm.df)
 #### Linear Discriminant Analysis
 Subset the data and use 'sources' to generate training data that will later be used to assign consumer. It is important that sources are distinct and have high accuracy in their assignment, otherwise they may not be informative as distinct energy channels/prey items.   
   
-Source groups consisted of coral reef consumers, including fishes, plankton, and squid, which reflect the primary producers of their respective habitats (benthic versus pelagic) and food webs (inshore versus offshore). Three source groups were used: “reef-associated plankton” represented by diurnal (*Caesio varilineata*, *Caesio xanthonota*) and nocturnal fishes (*Myripristis violacea*); “pelagic plankton” derived from squid (*Uroteuthis duvaucelii*); and “coral” derived from coralivorous fish (*Chaetodo meyeri*) found in Skinner et al. (2021).
+Source groups consisted of coral reef consumers, including fishes, plankton, and squid, which reflect the primary producers of their respective habitats (benthic versus pelagic) and food webs (inshore versus offshore). Three source groups were used: “reef-associated plankton” represented by diurnal (*Caesio varilineata*, *Caesio xanthonota*) and nocturnal fishes (*Myripristis violacea*); “pelagic plankton” derived from squid (*Uroteuthis duvaucelii*); and “coral” derived from coralivorous fish (*Chaetodo meyeri*) found in `Skinner et al. (2021).`
 
 ```{r LDA}
 ########## LDA setup
@@ -477,7 +506,7 @@ AllProdPredict <- data.frame(SampleID = prod$SampleID, Group = prod$Group, LD.cl
 write.csv(AllProdPredict, "output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
 ```
 
-Classify consumers (giant trevally or Galapagos sharks) as belonging to the three source groups. 
+Classify consumers (giant trevally or Galapagos shark) as belonging to the three source groups. 
 
 - *We show* the classification gives about 1/2 of the trevally as inshore vs. offshore, with 3 of 4 sharks being inshore.
 ```{r LDA classify consumers}
