@@ -1,6 +1,6 @@
 ---
 title: "Walaka Impacts on Reef Predators at a Remote Atoll"
-author: "CG Meyer, et al."
+author: "CG Meyer, et al. (in review); Code by C. Wall, R. Garcia-Seoane"
 date: "2025-09-18"
 output:
   html_document:
@@ -31,15 +31,17 @@ if (!require("pacman")) install.packages("pacman") # for rapid install if not in
 
 # use pacman to load all the packages you are missing!
 pacman::p_load("knitr", "ggord", "MASS", "tidyverse", "plyr", "dplyr", "gridExtra", 
-               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes", 'SIBER', )
+               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes", 'SIBER', 'ggpubr', 'patchwork')
 ```
 
-### Data 
+### Data Description
 Data here consists of bulk and amino acid δ^13^C and δ^15^N isotope values for Giant trevally (*Caranx ignobilis*) and Galapagos sharks (*Carcharhinus galapagensis*) from the Northwestern Hawaiian Islands, at French Frigate Shoals atoll ('ōlelo Hawai'i: *Lalo* or *Mokupāpapa*). We also include data used to calculate residence index using telemetry, as well as info on tagging dates and consumer fork length. Lastly, we incorporate the data from `Skinner et al. (2021)` reporting δ^13^C isotope values for essential amino acids (EAAs) collected inshore and offshore of coral reef fishes and invertebrates (plankton and squid) in the Maldives. These are used as trianing data to assign fish consumers and determine the proportion support of foodweb support to consumers.  
 
-`Skinner, C., Mill, A. C., Fox, M. D., Newman, S. P., Zhu, Y., Kuhl, A., & Polunin, N. V. C. (2021). Offshore pelagic subsidies dominate carbon inputs to coral reef predators. In Sci. Adv (Vol. 7).`
+`Skinner, et al,. 2021. Offshore pelagic subsidies dominate carbon inputs to coral reef predators. Science advances 7.`
 
-```{r Siber}
+### Bulk tissue analysis
+Use δ^13^C and δ^15^N biplots and perform `SIBER: Stable Isotope Bayesian Ellipse in R` analysis. This will plot the raw data with the standardized ellispe area, with 40% probability. This calculates the Isotope Niche Width
+```{r Siber, fig.show='hide', results='hide'}
 ### BULK d13C-d15N BIPLOT AND STANDARD ELLIPSES### 
 
 # load the SIBER package: library(SIBER)
@@ -53,6 +55,8 @@ df.bulk<- All.data %>%
   select(Group, d13C_bulk, d15N_bulk)
 
 df.bulk<-na.omit(df.bulk) # remove NAs
+
+df.bulk$Group<-factor(df.bulk$Group, levels=c("GT", "GS")) # make factor level
 
 # make levels for Siber
 df.bulk$group<- ifelse(df.bulk$Group=="GT", "1", "2")
@@ -69,29 +73,62 @@ siber <- createSiberObject(df.Siber)
 # create lists of plotting arguments to be passed onwards to each of the three plotting functions
 community.hulls.args <- list(col = 1, lty = 1, lwd = 1)
 group.ellipses.args  <- list(n = 100, p.interval = 0.4, 
-                             lty = 1, lwd = 2)
+                             lty = 2, lwd = 2)
 group.hull.args      <- list(lty = 2, col = "grey20")
 
 # ellipses and group.hulls are set to TRUE or T for short to force their plotting
+palette(c("gold3", "chocolate4"))
 par(mfrow=c(1,1))
 plotSiberObject(siber,
                 ax.pad = 2, 
                 hulls = F, community.hulls.args, 
                 ellipses = T, group.ellipses.args,
-                group.hulls = T, group.hull.args,
+                group.hulls = F, group.hull.args,
                 bty = "L",
                 iso.order = c(1,2),
                 xlab = expression({delta}^13*C~'‰'),
-                ylab = expression({delta}^15*N~'‰')
+                ylab = expression({delta}^15*N~'‰'),
+                x.limits=c(-17.7, -12.7),
+                y.limits = c(9.1, 11.5)
 )
+```
 
+After running SIBER, plot the SIBER biplot with 40% ellipses for the two shark species.  
+This is part of **Figure 4**.
+```{r Siber plot, fig.cap="**Figure 4a.** Muscle tissue Isotopic biplot of from FFS predators. Isotopic biplot (δ^13^C vs. δ^15^N) of bulk muscle tissue from giant trevally and Galapagos sharks. Dashed ellipses represent 40% Bayesian ellipses.", fig.dim=c(5,5)}
+# go with ggplot, bc base R is BASSSSSIC
+Siber.plot<-ggplot(data=df.bulk, aes(y=d15N_bulk, x=d13C_bulk))+
+  geom_point(aes(fill=Group),  shape=21, size=4)+
+  xlab(expression({delta}^13*C~'‰'))+
+  ylab(expression({delta}^15*N~'‰'))+
+  xlim(-17.7, -12.7)+
+  ylim(9.3, 11.5)+
+  theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_fill_manual(values=c("gold", "darkgoldenrod"),
+                    name = "", 
+                    labels = c("Giant trevally (GT)", "Galapagos shark (GS)"))+
+  guides(fill = guide_legend(position="inside")) + 
+  theme(legend.background=element_blank()) +
+  theme(legend.position.inside = c(0.81, 0.95)) +
+# add in the ellipses from Siber
+  stat_ellipse(aes(group = (Group),
+                   color = Group), 
+               alpha = 0, 
+               level = 0.4,
+               lty=2, size=0.9,
+               type = "norm",
+               geom = "polygon") + 
+  scale_color_manual(values=c("gold2", "darkgoldenrod")) +
+  guides(color="none")
+
+Siber.plot
+```
+
+Calculate the posterior estimates of the `Bayesian Standard Ellipse Area (SEA~B~)`. We will add this to the SIBER biplot generated above. The SEA~B~ plot shows the  95%, 75%, and 50% credible intervals for each species, with modes indicated by black circles.
+```{r SEAb, results='hide'}
 # calculate summary statistics for each group: TA, SEA and SEAc
 group.ML <- groupMetricsML(siber)
 print(group.ML)
-
-# add a legend
-legend("topright", colnames(group.ML), 
-       pch = c(1,2), col = c(1:2), lty = 1)
 
 # use Bayesian Inference to calculate uncertainty around ellipses
 # options for running jags
@@ -113,18 +150,46 @@ ellipses.posterior <- siberMVN(siber, parms, priors)
 
 # the posterior estimates of the ellipses for each group can be used to calculate the SEA.B for each group.
 SEA.B <- siberEllipses(ellipses.posterior)
+```
 
-siberDensityPlot(SEA.B, xticklabels = colnames(group.ML), 
-                 xlab = c("Community | Group"),
-                 ylab = expression("Standard Ellipse Area " ('‰' ^2) ),
+```{r SEAb plot, results='hide', fig.cap="**Figure 4b.** Posterior estimates of the Bayesian Standard Ellipse Area (SEA~B~).", fig.dim=c(4,4)}
+# colors for SEAb plot
+SEA.col<-matrix(c("gray85","gold", "gold3","gold","gray85",
+                  "gray85", "darkgoldenrod2", "goldenrod4","darkgoldenrod2","gray85"), ncol=2, nrow=5)
+
+par(mar=c(2,4.5,0,0))
+
+### plot the SEAb figure                  
+siberDensityPlot(SEA.B, 
+                 xticklabels= c("GT", "GS"), 
+                 xlab = "",
+                 ylab = expression("SEA " ('‰' ^2) ),
                  bty = "L",
                  las = 1,
-                 main = "SIBER ellipses on each group",
-                 ylim = c(0, 4) 
-)
+                 clr = SEA.col,
+                 #main = "SIBER ellipses on each group",
+                 ylim = c(0, 4))
 
+# will need this to export, but Rmd will run with the figure above
+SEAb.plot<- recordPlot() # save SEAb plot in list
+#plot.new() # close the "recording" of the plot -- really difficult to save this within R.
+#SEAb.plot
+```
+
+```{r combine Fig 4, fig.show='hide', results='hide'}
+# add to other plot. Will require cleaning up in Affinity. SIBER isn't most user friendly.
+  ggdraw() +
+  draw_plot(Siber.plot) +
+  draw_plot(SEAb.plot, .17, .712, .34, .22)
+
+dev.copy(pdf, "figures/Fig.4.Siber.pdf", height=8, width=8)
+dev.off()
+```
+
+```{r Siber add ons, eval=FALSE, include=FALSE}
+########### other useful stats
 # add red x's for the ML estimated SEA-c
-points(1:ncol(SEA.B), group.ML[3,], col="red", pch = "x", lwd = 2)
+#points(1:ncol(SEA.B), group.ML[3,], col="red", pch = "x", lwd = 2)
 
 # calculate some credible intervals 
 cr.p <- c(0.95, 0.99) # vector of quantiles
@@ -144,8 +209,15 @@ SEA.B.modes <- lapply(
   prob = cr.p, all.modes=T)
 
 print(SEA.B.modes)
+```
 
+### δ^15^N Amino Acid Analysis
+Amino acid (AA) nitrogen isotope analysis δ^15^N is uses Source-AAs (notably Glutamic Acid [Glx] that are integrated into consumers and reflect the base of the food web. These internal baselines are combined with Trophic-AA (notably Phenylalanne [Phe]) analysis to obtain better resolution into trophic positions (TP) of consumers. In areas were protists are important in food webs, there can be a "missing step" in trophic position (so called, "Protistan Trophic Position"). This is resolved by substituting Alanine (Ala) for Glx in TP calculations.  
 
+`Y. Chikaraishi, et al. Limnol Oceanogr Methods 7, 740–750 (2009)`. 
+`M. Décima, et al. Limnol Oceanogr 62, 2308–2322 (2017)`.  
+
+```{r df smithing}
 ### BOXPLOTS, ANOVA AND CORRELATIONS WITH RESIDENCY_INDEX###
 
 # load ggplot2 package: library(ggplot2)
@@ -155,38 +227,102 @@ AA.indic <- All.data %>%
 
 AA.indic<-na.omit(AA.indic)
 
-# boxplots high residency (Residency_index ≥ 0.1, ∼inshore) vs low residency (Residency_index < 0.1, ∼offshore) 
-boxplot(d15N_SAA ~ Residency, data = AA.indic,
-        col=c("lightgreen","lightcoral"),
-        ylab="δ15NSAA", xlab="Residency")
-boxplot(TPGlx_Phe ~ Residency, data = AA.indic,
-        col=c("lightgreen","lightcoral"),
-        ylab="TPGlx_Phe", xlab="Residency")
-boxplot(TPAla_Phe ~ Residency, data = AA.indic,
-        col=c("lightgreen","lightcoral"),
-        ylab="TPAla_Phe", xlab="Residency")
-boxplot(PTS ~ Residency, data = AA.indic,
-        col=c("lightgreen","lightcoral"),
-        ylab="PTS", xlab="Residency")
+AA.indic$Residency<-factor(AA.indic$Residency, levels=c("low", "high"))
 
-# ANOVA
-model <- aov(d15N_SAA ~ Residency, data = AA.indic)
-print(summary(model))
-model <- aov(TPGlx_Phe ~ Residency, data = AA.indic)
-print(summary(model))
-model <- aov(TPAla_Phe ~ Residency, data = AA.indic)
-print(summary(model))
-model <- aov(PTS ~ Residency, data = AA.indic)
-print(summary(model))
+AA.indic$Res.cat<-ifelse(AA.indic$Residency=="low", "< 0.1 offshore", ">= 0.1 inshore")
+AA.indic$Res.cat<- factor(AA.indic$Res.cat, levels=c("< 0.1 offshore", ">= 0.1 inshore"))
 
-# correlations with Residency_index
+AA.indic$Group<-factor(AA.indic$Group, levels=c("GT", "GS"))
+```
+
+#### Residency Histogram
+Plot a histogram of residency. This will be used to motivate the binning as "inshore and offshore."
+
+- We chose to bin as <0.1 as inshore and >- 0.1 as offshore.
+- This is **Figure S2**.
+```{r histogram, fig.cap="**Figure S2.** Histogram showing the frequency distribution of Residency Index values for giant trevally and Galapagos shark sampled for stable isotope analysis.", fig.dim=c(5,5), results='hide'}
+
+hist(AA.indic$Residency.index, main="", ylab="Number of Individuals", xlab="Residency Index", 
+     breaks = seq(0,0.7, 0.035))
+box(lty = 1, col = 'black')
+
+dev.print(pdf, "figures/Fig.S2.histogram.pdf", width=6, height=6)
+dev.off()
+```
+
+Run for loops to create boxplots of δ^15^N amino acid metrics with fish residency. Here we use two categories for residency based on residency scores.  
+
+- low inshore residency = scores of < 0.1, classified as "offshore". 
+- high inshore residency = scores >=0.1, classified as "inshore"
+
+```{r boxplot and regression for residency, results='hide', fig.show='hide'}
+#### #### #### #### #### #### #### 
+#### boxplots high residency 
+# (Residency_index ≥ 0.1, ∼inshore) vs low residency (Residency_index < 0.1, ∼offshore) 
 # list of variables to analyze
-vars <- c("d15N_SAA", "TPGlx_Phe", "TPAla_Phe", "PTS")
+vars <- c("d15N_SAA", "TPGlx_Phe", "TPAla_Phe", "PTS") # we use these for boxplot and for regression
+p.box<- list()
+
+# data frame to store model results
+results.box <- data.frame()
+
+for (var in vars) {
+  # fit linear model
+model <- lm(AA.indic[[var]] ~ AA.indic$Res.cat)
+summary_model <- summary(model)
+  
+# save results in the results data frame
+results.box <- rbind(results.box, data.frame(
+    Variable = var,
+    Intercept = coef(model)[1],
+    Slope = coef(model)[2],
+    R2 = summary_model$r.squared,
+    p_value = summary_model$coefficients[2,4]
+  ))
+
+# plot using ggplot2
+  p.box[[var]] <- ggplot(AA.indic, aes(x = Res.cat, y = .data[[var]])) +
+    geom_boxplot(aes(fill = Res.cat), alpha=0.8) +
+    xlab("Residency")+
+    scale_fill_manual(values=c("dodgerblue", "springgreen4"))+
+    scale_y_continuous(labels = scales::number_format(accuracy = 0.1))+
+    theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+    guides(fill="none")
+  
+  #print(p.reg)
+  #ggsave(p.reg, file=paste0("figures/plot_", var,".pdf"), width = 5, height = 5, units = "in")
+}
+
+wrap_plots(p.box, ncol=1) # plot list with 'patchwork'
+#ggsave("figures/FigS3.boxplot.Lpanel.pdf", height=12, width=3.5) # save and export as a pdf
+#dev.off()
+
+# of thge above models, only these two are significant ANOVA
+model.SAA <- aov(d15N_SAA ~ Residency, data = AA.indic)
+anova(model.SAA) # signif p=0.016
+
+model.TPgp <- aov(TPGlx_Phe ~ Residency, data = AA.indic)
+anova(model.TPgp) # signif p=0.026
+```
+
+Results from categorical tests of "inshore vs offshore" effects on 
+```{r boxplot models}
+# display results for boxplot tests
+print(results.box) #
+```
+
+Use linear regressions to test correlations between δ^15^N amino acid metrics and fish Residency Index.
+```{r regression for residency, results='hide', fig.show='hide'}
+#######  Regression plots: correlations with Residency_index  ####### 
+# set up for loop 
 
 # data frame to store results
 results <- data.frame()
 
 # linear regression and plotting for each variable
+p.reg = list() # a list to save plots in
+
+###### run the loop
 for (var in vars) {
 # fit linear model
 model <- lm(AA.indic[[var]] ~ AA.indic$Residency.index)
@@ -202,20 +338,44 @@ results <- rbind(results, data.frame(
   ))
   
 # plot using ggplot2
-  p <- ggplot(AA.indic, aes(x = Residency.index, y = .data[[var]])) +
-    geom_point(aes(color = Group), size = 2) +
-    geom_smooth(method = "lm", se = TRUE, color = "blue", fill = "lightblue") +
-    theme_minimal() +
+  p.reg[[var]] <- ggplot(AA.indic, aes(x = Residency.index, y = .data[[var]])) +
+    geom_point(aes(shape = Group), color="springgreen4", size = 2) +
+    scale_shape_manual(values=c(19,17))+
+    geom_smooth(method = "lm", se = TRUE, color = "springgreen4", fill = "springgreen4", alpha=0.2) +
     labs(x = "Residency index",
-         y = var)
+         y = var)+
+    theme(aspect.ratio = 1) +
+    scale_y_continuous(labels = scales::number_format(accuracy = 0.1))+
+    theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
   
-  print(p)
+  #print(p.reg)
+  #ggsave(p.reg, file=paste0("figures/plot_", var,".pdf"), width = 5, height = 5, units = "in")
 }
 
-# display results
-print(results)
+# view and save plots
+# wrap_plots(p.reg, ncol=1) # plot list with 'patchwork'
+
+######## combine plots
+box<-grid.arrange(grobs= p.box, ncol=1) # save as object that isn't a 'grob'
+reg<-grid.arrange(grobs= p.reg, ncol=1)
 ```
 
+Results from linear regressions of δ^15^N amino acid metrics and Residency Index.
+```{r residence and d15N output}
+# display results for regressions
+print(results) # not significant for any, but nearly so for d15N-SAA (p=0.057)
+```
+
+Combine boxplots and regression plots for δ^15^N amino acid data with residency index to produce 8 panel figure. This is compiled **Figure S3**.
+```{r combined S3 plot, results='hide', fig.cap="**Figure S3.** (*Left*) Boxplots showing differences in δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS between fish with low residency index (< 0.1, greater offshore nutrient contribution) and a high residency index (≥ 0.1, greater inshore nutrient contribution). (*Right*) Panels show the relationships between predators (giant trevally [circles], Galapagos shark [triangles]) and δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS.", fig.dim=c(6,10)}
+
+plot_grid(box, reg, ncol=2, rel_widths=c(0.5, 1)) # combine and set widths
+ggsave("figures/Fig.S3.box.regr.pdf", height=12, width=7) # save and export as a pdf
+dev.off()
+```
+
+### δ^13^C Amino Acid Analysis
+Here we use the δ^13^C values of essential amino acids to trace the determine the reliance of fishes on inshore vs. offshore production. 
 ```{r load data, echo=FALSE}
 # load data or Carbon EAAs
 df<-read.csv("data/Walak_Trevl_Gshark.csv")
@@ -241,7 +401,7 @@ norm.df<- df %>% dplyr::select(SampleID, Group, Thrn, Valn, Leun, Phen, Lysn)
 norm.df<-na.omit(norm.df)
 ```
 
-### Linear Discriminant Analysis
+#### Linear Discriminant Analysis
 Subset the data and use 'sources' to generate training data that will later be used to assign consumer. It is important that sources are distinct and have high accuracy in their assignment, otherwise they may not be informative as distinct energy channels/prey items.   
   
 Source groups consisted of coral reef consumers, including fishes, plankton, and squid, which reflect the primary producers of their respective habitats (benthic versus pelagic) and food webs (inshore versus offshore). Three source groups were used: “reef-associated plankton” represented by diurnal (*Caesio varilineata*, *Caesio xanthonota*) and nocturnal fishes (*Myripristis violacea*); “pelagic plankton” derived from squid (*Uroteuthis duvaucelii*); and “coral” derived from coralivorous fish (*Chaetodo meyeri*) found in Skinner et al. (2021).
@@ -303,7 +463,7 @@ Source.LDA <- ggord(All.train, prod$Group, arrow=0,
 
 # view plot, not used in manuscript
 Source.LDA
-dev.print(pdf, "figures/Walak_LDA.pdf", height=6, width=8)
+dev.print(pdf, "figures/Fig.NA.Walak_LDA.pdf", height=6, width=8)
 dev.off()
 
 # Write a csv file for the coefficients of LD1/2
@@ -361,8 +521,8 @@ raw.norm.LD.data <- raw.norm.LD.data %>%
 write.csv(raw.norm.LD.data, "output/Walak_LDA.data.compiled.csv")
 ```
 
-Plot the LDA with producer groups and the consumers.
-```{r LDA figure, fig.cap="**Figure 6.** Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
+Plot the LDA with producer groups and the consumers. **This is Figure 5**
+```{r LDA figure, fig.cap="**Figure 5.** Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
 #### plot it
 raw.norm.LD.data$Group<-factor(raw.norm.LD.data$Group, 
                       levels=c("PelagicPlankton", "ReefPlankton", "Coral", 
@@ -374,7 +534,7 @@ lda.5.colors <- c("dodgerblue", "springgreen4","coral", "gold", "darkgoldenrod")
 LDA.scat.Group <- ggplot(raw.norm.LD.data, aes(x = LD1, y = LD2))+
   geom_point(size = 3.5, color="black",
              aes(fill = Group, color = Group, shape = Group), alpha = 0.9) +
-  stat_ellipse(type = "norm", level = 0.90, linewidth = 0.5, aes(lty = Group, color = Group))+
+  stat_ellipse(type = "norm", level = 0.95, linewidth = 0.5, aes(lty = Group, color = Group))+
   scale_color_manual(values = lda.5.colors)+
   scale_fill_manual(values = lda.5.colors)+
   scale_shape_manual(values = c(24, 24, 24, 21, 21))+
@@ -384,7 +544,7 @@ LDA.scat.Group <- ggplot(raw.norm.LD.data, aes(x = LD1, y = LD2))+
   theme_classic() + guides(lty = "none")
 
 LDA.scat.Group
-dev.copy(pdf, "figures/Walak_LDA_sorc_consumer.pdf", width=7, height=6)
+dev.copy(pdf, "figures/Fig.5.Walak_LDA_sorc_consumer.pdf", width=7, height=6)
 dev.off()
 ```
 
@@ -648,9 +808,9 @@ write.csv(Samp.out.cleaned.EAAn.3, "output/EAAn_Mix/Walak_MixSIAR_SampleID.df.EA
 ```
 
 #### 3 source MixSIAR plot 
-Plot of three sources and their contribution to consumers.
+Plot of three sources and their contribution to consumers. **This is Figure 6a**
 
-```{r 3 sources MixSIAR, results='hide', fig.cap="**Figure 7a.** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of pelagic plankton, reef-associated plankton and corals to Giant trevally and Galapagos sharks."}
+```{r 3 sources MixSIAR, results='hide', fig.cap="**Figure 6a.** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of pelagic plankton, reef-associated plankton and corals to Giant trevally and Galapagos sharks.", fig.dim=c(6.5,6)}
 ################## ready to plot ################## 
 
 # bring in some metadata to make sense of it
@@ -686,7 +846,7 @@ Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean, 
 
 #print and save
 Mix.samp.plot.EAAn.3
-dev.copy(pdf, "figures/Walak_Fig.mixsiar.3sour.EAAn.pdf", width = 6, height = 5)
+dev.copy(pdf, "figures/Fig.6A.Walak_Fig.mixsiar.3sour.EAAn.pdf", width = 7, height = 5)
 dev.off()
 ```
 
@@ -731,7 +891,7 @@ write.csv(Samp.out.cleaned.EAAn, "output/MixSIAR_models/EAAn_SampleID_model/MixS
 
 #### 2 member MixSIAR plot
 Using aggregated sources, plot the % contribution of inshore vs. offshore food web support to consumers
-```{r 2 sources MixSIAR plot, results='hide', fig.cap="**Figure.** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of inshore versus offshore resources to giant trevally and Galapagos sharks."}
+```{r 2 sources MixSIAR plot, results='hide', fig.cap="**Figure. NA** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of inshore versus offshore resources to giant trevally and Galapagos sharks.", fig.dim=c(5,5)}
 samp.mix.df<-Samp.out.cleaned.EAAn
 samp.mix.reduced <- samp.mix.df %>% 
   dplyr::select(SampleID, Source, Mean, SD)
@@ -759,7 +919,7 @@ Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Me
 
 #print and save grouped with 2 categories
 Mix.samp.plot.EAAn.InOff
-dev.copy(pdf, "figures/Walak_Fig.mixsiar.2sour.EAAn.pdf", width = 4, height = 5)
+dev.copy(pdf, "figures/Fig.NA.Walak_Fig.mixsiar.2sour.EAAn.pdf", width = 4, height = 5)
 dev.off()
 ```
 
@@ -790,8 +950,8 @@ anova(Res.Inshore.mod.GT)
 ```
 
 #### Residency by proportion of inshore foodweb support 
-Plot the relationship for residency index for all sames (sharks and trevally).
-```{r res by inshore proportion EAA, fig.cap="**Figure 7B.** Relationship between the proportion of inshore carbon sources utilized versus and the predator residency index. The correlation is significant (ANOVA, f = 20.943, p <0.001)"}
+Plot the relationship for residency index for all sames (sharks and trevally). **This is Figure 6b**
+```{r res by inshore proportion EAA, fig.cap="**Figure 6B.** Relationship between the proportion of inshore carbon sources utilized versus and the predator residency index. The correlation is significant (ANOVA, f = 20.943, p <0.001)", fig.dim=c(5,5)}
 Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
   geom_smooth(method = lm, color="seagreen", alpha=0.2, fill="mediumseagreen")+
   geom_point(color="seagreen", size=2.5, aes(shape=Group))+
@@ -801,5 +961,5 @@ Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
   theme_classic()
 
 Inshore.prop.plant
-ggsave("figures/Walak_Inshore.prop.EAAn.pdf", width=5, height=5)
+ggsave("figures/Fig.6B.Walak_Inshore.prop.EAAn.pdf", width=5, height=5)
 ```
