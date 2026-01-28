@@ -242,8 +242,6 @@ $$δ^{15}N_{SAA} = mean(δ^{15}N_{Phe}~ + δ^{15}N_{Lys})$$
 
 
 ```{r df smithing}
-
-
 # info on calculations
 
 
@@ -548,6 +546,70 @@ raw.norm.LD.data <- raw.norm.LD.data %>%
 ###### ###### ######
 # export all data
 write.csv(raw.norm.LD.data, "output/Walak_LDA.data.compiled.csv")
+```
+
+```{r LDA norm, eval=FALSE}
+##### Gut Check ##### 
+
+# Check if normalization impacts the outcome of analysis
+# Here us normalized EAAs instead of (raw) measured EAAs
+# TLDR: no difference in assignment, some differences in ordination (LD1 >>>) and Coral looking more like Reef Plankton
+
+########## LDA setup
+norm.df$SampleID<-as.factor(norm.df$SampleID)
+norm.df$Group<-as.factor(norm.df$Group)
+
+# remove all samples, keep source
+prod.norm <- norm.df[!(norm.df$Group == "GT" |norm.df$Group == "GS"),]
+prod.norm$Group<-droplevels(prod.norm$Group) # drop sample levels
+
+#Run an LDA with a jackknifing model fit to look at error rate
+#'CV = TRUE' makes the LDA run a jackknifed - leave one out - model fit
+All.lda.norm <- lda(Group ~Thrn + Valn + Leun + Phen + Lysn, data = prod.norm, CV = TRUE)
+
+
+#Create a table which compares the classification from the LDA model to the actual classification
+All.reclass.norm <- table(prod.norm$Group, All.lda.norm$class) #100% success
+
+#Total percent of samples correctly classified is the sum of the diagonal of this table
+sum.dig.norm<-sum(diag(prop.table(All.reclass.norm))) #90/4%
+
+#Percent of each producer Group correctly reclassified: 91% for all groups
+reclass.norm<-diag(prop.table(All.reclass.norm, 1)) # (78% coral, 100% plankton, 92% reef)
+
+# print results: 2 reef plankton as coral
+All.reclass.norm
+
+#Create a training LDA function from the library data
+All.train.norm <- lda(Group~ Thrn + Valn + Leun + Phen + Lysn, data = prod.norm)
+All.train.norm
+
+# plot LD1 and LD2 to show the sources
+prod.norm$Group <-factor(prod.norm$Group, levels=c("PelagicPlankton", "ReefPlankton", "Coral"))
+
+Source.LDA.norm <- ggord(All.train.norm, prod.norm$Group, arrow=0,
+                    txt = NULL, veclsz = 0, vectyp="blank", # remove vectors and arrows
+                    cols = c("dodgerblue", "springgreen4","coral"), grp_title = "Producers",
+                    ellipse_pro = 0.99, xlim = c(-14,10), ylim = c(-8,6), alpha=0.5) + 
+  theme_classic() + theme(legend.position = 'top')
+
+######## Classify Trevaly and Sharks ####
+######## ######## ######## ######## #####
+
+# remove all samples, keep source
+cons.df.norm <- norm.df[(norm.df$Group == "GT" | norm.df$Group == "GS"),]
+cons.df.norm$Group<-droplevels(cons.df.norm$Group) # drop sample levels
+
+cons.predict.norm <- predict(object = All.train.norm, newdata = cons.df.norm)
+
+cons.predict.data.norm <- data.frame(SampleID = cons.df.norm$SampleID, Group = cons.df.norm$Group, 
+                                LD.class = cons.predict.norm$class, cons.predict.norm$x)
+
+All.reclass.norm <- table(cons.df.norm$Group, cons.predict.norm$class) 
+All.reclass.norm
+#  GS: 1 as PelagicPlank, 3 as ReefPlankton
+#  GT: 7 as PelagicPlank, 6 as ReefPlankton
+
 ```
 
 Plot the LDA with producer groups and the consumers. **This is Figure 5**
