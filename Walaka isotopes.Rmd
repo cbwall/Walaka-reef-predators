@@ -31,7 +31,8 @@ if (!require("pacman")) install.packages("pacman") # for rapid install if not in
 
 # use pacman to load all the packages you are missing!
 pacman::p_load("knitr", "ggord", "MASS", "tidyverse", "plyr", "dplyr", "gridExtra", 
-               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes", 'SIBER', 'ggpubr', 'patchwork')
+               "cowplot", "ggplot2", "R2jags", "MixSIAR", "remotes", 'SIBER', 'ggpubr', 'patchwork', 
+               "remotes", "vegan", "pairwiseAdonis")
 ```
 
 ### Data Description
@@ -77,7 +78,7 @@ group.ellipses.args  <- list(n = 100, p.interval = 0.4,
 group.hull.args      <- list(lty = 2, col = "grey20")
 
 # ellipses and group.hulls are set to TRUE or T for short to force their plotting
-palette(c("gold3", "chocolate4"))
+palette(c("dodgerblue3", "orangered"))
 par(mfrow=c(1,1))
 plotSiberObject(siber,
                 ax.pad = 2, 
@@ -98,13 +99,13 @@ This is part of **Figure 4**.
 ```{r Siber plot, fig.cap="**Figure 4a.** Muscle tissue Isotopic biplot of from FFS predators. Isotopic biplot (δ^13^C vs. δ^15^N) of bulk muscle tissue from giant trevally and Galapagos sharks. Dashed ellipses represent 40% Bayesian ellipses.", fig.dim=c(5,5)}
 # go with ggplot, bc base R is BASSSSSIC
 Siber.plot<-ggplot(data=df.bulk, aes(y=d15N_bulk, x=d13C_bulk))+
-  geom_point(aes(fill=Group),  shape=21, size=4)+
+  geom_point(aes(fill=Group),  shape=21, size=5)+
   xlab(expression({delta}^13*C~'‰'))+
   ylab(expression({delta}^15*N~'‰'))+
   xlim(-17.7, -12.7)+
   ylim(9.3, 11.5)+
   theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  scale_fill_manual(values=c("gold", "darkgoldenrod"),
+  scale_fill_manual(values=c("dodgerblue3", "orangered"),
                     name = "", 
                     labels = c("Giant trevally (GT)", "Galapagos shark (GS)"))+
   guides(fill = guide_legend(position="inside")) + 
@@ -118,7 +119,7 @@ Siber.plot<-ggplot(data=df.bulk, aes(y=d15N_bulk, x=d13C_bulk))+
                lty=2, size=0.9,
                type = "norm",
                geom = "polygon") + 
-  scale_color_manual(values=c("gold2", "darkgoldenrod")) +
+  scale_color_manual(values=c("dodgerblue3", "orangered")) +
   guides(color="none")
 
 Siber.plot
@@ -154,8 +155,8 @@ SEA.B <- siberEllipses(ellipses.posterior)
 
 ```{r SEAb plot, results='hide', fig.cap="**Figure 4b.** Posterior estimates of the Bayesian Standard Ellipse Area (SEA~B~).", fig.dim=c(4,4)}
 # colors for SEAb plot
-SEA.col<-matrix(c("gray85","gold", "gold3","gold","gray85",
-                  "gray85", "darkgoldenrod2", "goldenrod4","darkgoldenrod2","gray85"), ncol=2, nrow=5)
+SEA.col<-matrix(c("gray85", "skyblue1", "dodgerblue3","skyblue1","gray85",
+                  "gray85","coral", "orangered","coral","gray85"), ncol=2, nrow=5)
 
 par(mar=c(2,4.5,0,0))
 
@@ -219,16 +220,23 @@ Amino acid (AA) nitrogen isotope analysis δ^15^N is uses Source-AAs (notably Gl
   
 #### Calculations
 
-**Equation 1 and 2.** *Trophic position of fishes using AA-Glx and Phe, with calculations based on two approaches.  
- $${TP_{Glx-Phe}} = \frac{(δ^{15}N_{Glx}~ - δ^{15}N_{Phe} - \beta)}{TDF} +1$$   
+**Equation 1 and 2.** *Trophic position of fishes using AA-Glx and Phe, with calculations based on two approaches.
+$${TP_{Glx-Phe}} = \frac{(δ^{15}N_{Glx}~ - δ^{15}N_{Phe} - \beta)}{TDF} +1$$
  
-- In this equation, *β* is the difference between δ~15~N values between Glx and Phe in marine primary producers, while TDF denotes the trophic discrimination factor, representing the ~15~N enrichment between Glx and Phe per trophic level. `Here we adopt β = 3.4‰ and TDF = 7.6‰ for fishes`.      
-- We also report `TP~Glx-Phe~ using TDF = 5.9‰`, originally developed for sharks and rays.  
+In this equation, *β* is the difference between δ~15~N values between Glx and Phe in marine primary producers, while *TDF* denotes the trophic discrimination factor, representing the ~15~N enrichment between Glx and Phe per trophic level. 
+
+- We adopt `β = 3.1‰` (Garcia-Seoane et al. 2023)     
+- We also report two TDF in `TP~Glx-Phe~` using...   
+- `TDF = 5.7 ± 0.3‰ for trevally` (Bradley et al. 2015)
+- `TDF = 5.9 ± 0.1‰ for Galapagos sharks`, originally developed for sharks and rays (Dale et al. 2011; Papastamatiou et al. 2011).  
+  
 
 **Equation 3.**  *Trophic position  of fishes using AA-Ala and Phe, with calculations following `Decima et al (2017)`.
  $${TP_{Ala-Phe}} = \frac{(δ^{15}N_{Ala}~ - δ^{15}N_{Phe} - \beta)}{TDF} +1$$
    
-- Additionally, we calculated TP using δ~15~N values of Ala and Phe (TP~Ala-Phe~), which account for the contribution of protists, with `β = 3.2‰`, representing the δ~15~N difference between Ala and Phe in marine primary producers, and `TDF = 4.5‰`, representing the ~15~N enrichment between Ala and Phe per trophic level.  
+We also calculated TP using δ~15~N values of Ala and Phe (TP~Ala-Phe~), which account for the contribution of protists.
+- `β = 3.2 ± 1.2‰`, representing the δ~15~N difference between Ala and Phe in marine primary producers
+- `TDF = 4.5 ± 2.1‰‰`, representing the ~15~N enrichment between Ala and Phe per trophic level for both trevally and sharks. (Décima et al. 2017; Décima and Landry 2020; Shea et al. 2023) 
   
 **Equation 4.** *Protistan Trophic Steps.*
 $$PTS = (δ^{15}N_{Ala-Phe}~ - δ^{15}N_{Glx-Phe})$$
@@ -266,14 +274,14 @@ AA.indic$Group<-factor(AA.indic$Group, levels=c("GT", "GS"))
 Plot a histogram of residency. This will be used to motivate the binning as "inshore and offshore."
 
 - We chose to bin as <0.1 as inshore and >- 0.1 as offshore.
-- This is **Figure S2**.
-```{r histogram, fig.cap="**Figure S2.** Histogram showing the frequency distribution of Residency Index values for giant trevally and Galapagos shark sampled for stable isotope analysis.", fig.dim=c(5,5), results='hide'}
+- This is **Figure S3**.
+```{r histogram, fig.cap="**Figure S3.** Histogram showing the frequency distribution of Residency Index values for giant trevally and Galapagos shark sampled for stable isotope analysis.", fig.dim=c(5,5), results='hide'}
 
 hist(AA.indic$Residency.index, main="", ylab="Number of Individuals", xlab="Residency Index", 
      breaks = seq(0,0.7, 0.035))
 box(lty = 1, col = 'black')
 
-dev.print(pdf, "figures/Fig.S2.histogram.pdf", width=6, height=6)
+dev.print(pdf, "figures/Fig.S3.histogram.pdf", width=6, height=6)
 dev.off()
 ```
 
@@ -311,7 +319,7 @@ results.box <- rbind(results.box, data.frame(
   p.box[[var]] <- ggplot(AA.indic, aes(x = Res.cat, y = .data[[var]])) +
     geom_boxplot(aes(fill = Res.cat), alpha=0.8) +
     xlab("Residency")+
-    scale_fill_manual(values=c("dodgerblue", "springgreen4"))+
+    scale_fill_manual(values=c("lightblue3", "springgreen4"))+
     scale_y_continuous(labels = scales::number_format(accuracy = 0.1))+
     theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
     guides(fill="none")
@@ -321,7 +329,7 @@ results.box <- rbind(results.box, data.frame(
 }
 
 wrap_plots(p.box, ncol=1) # plot list with 'patchwork'
-#ggsave("figures/FigS3.boxplot.Lpanel.pdf", height=12, width=3.5) # save and export as a pdf
+#ggsave("figures/FigSx.boxplot.Lpanel.pdf", height=12, width=3.5) # save and export as a pdf
 #dev.off()
 
 # of thge above models, only these two are significant ANOVA
@@ -393,11 +401,11 @@ Results from linear regressions of δ^15^N amino acid metrics and Residency Inde
 print(results) # not significant for any, but nearly so for d15N-SAA (p=0.057)
 ```
 
-Combine boxplots and regression plots for δ^15^N amino acid data with residency index to produce 8 panel figure. This is compiled **Figure S3**.
-```{r combined S3 plot, results='hide', fig.cap="**Figure S3.** (*Left*) Boxplots showing differences in δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS between fish with low residency index (< 0.1, greater offshore nutrient contribution) and a high residency index (≥ 0.1, greater inshore nutrient contribution). (*Right*) Panels show the relationships between predators (giant trevally [circles], Galapagos shark [triangles]) and δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS.", fig.dim=c(6,10)}
+Combine boxplots and regression plots for δ^15^N amino acid data with residency index to produce 8 panel figure. This is compiled **Figure S4**.
+```{r combined S4 plot, results='hide', fig.cap="**Figure S4.** (*Left*) Boxplots showing differences in δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS between fish with low residency index (< 0.1, greater offshore nutrient contribution) and a high residency index (≥ 0.1, greater inshore nutrient contribution). (*Right*) Panels show the relationships between predators (giant trevally [circles], Galapagos shark [triangles]) and δ^15^N~SAA~, TP~Glx-Phe~, TP~Ala-Phe~, and PTS.", fig.dim=c(6,10)}
 
 plot_grid(box, reg, ncol=2, rel_widths=c(0.5, 1)) # combine and set widths
-ggsave("figures/Fig.S3.box.regr.pdf", height=12, width=7) # save and export as a pdf
+ggsave("figures/Fig.S4.box.regr.rev.pdf", height=12, width=7) # save and export as a pdf
 dev.off()
 ```
 
@@ -484,8 +492,8 @@ prod$Group <-factor(prod$Group, levels=c("PelagicPlankton", "ReefPlankton", "Cor
 
 Source.LDA <- ggord(All.train, prod$Group, arrow=0,
                     txt = NULL, veclsz = 0, vectyp="blank", # remove vectors and arrows
-                    cols = c("dodgerblue", "springgreen4","coral"), grp_title = "Producers",
-                    ellipse_pro = 0.95, xlim = c(-10,14), ylim = c(-8,6), alpha=0.5) + theme_classic() +
+                    cols = c("lightblue3", "olivedrab4","gold3"), grp_title = "Producers",
+                    ellipse_pro = 0.95, xlim = c(-10,14), ylim = c(-8,6), alpha=0.8) + theme_classic() +
   theme(legend.position = 'top')
 
 # view plot, not used in manuscript
@@ -548,14 +556,42 @@ raw.norm.LD.data <- raw.norm.LD.data %>%
 write.csv(raw.norm.LD.data, "output/Walak_LDA.data.compiled.csv")
 ```
 
-```{r LDA norm, eval=FALSE}
+Plot the LDA with producer groups and the consumers. **This is Figure 5**
+```{r LDA figure, fig.cap="**Figure 5.** Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
+#### plot it
+raw.norm.LD.data$Group<-factor(raw.norm.LD.data$Group, 
+                      levels=c("PelagicPlankton", "ReefPlankton", "Coral", 
+                               "GT", "GS"))
+
+lda.5.colors <- c("lightblue3", "olivedrab4","gold3", "dodgerblue3", "orangered")
+lda.5.lines<-c("lightblue4", "darkgreen","goldenrod", "blue", "red")
+
+LDA.scat.Group <- ggplot(raw.norm.LD.data, aes(x = LD1, y = LD2))+
+  geom_point(size = 4.5, color="black",
+             aes(fill = Group, color = Group, shape = Group), alpha = 0.9) +
+  stat_ellipse(type = "norm", level = 0.95, linewidth = 0.5, aes(lty = Group, color = Group))+
+  scale_color_manual(values = lda.5.lines)+
+  scale_fill_manual(values = lda.5.colors)+
+  scale_shape_manual(values = c(24, 24, 24, 21, 21))+
+  scale_linetype_manual(values = c(2,2,2,0,0))+
+  xlab("LD1 (79.1%)") + ylab("LD2 (20.9%)") +
+  ggtitle(expression(paste("LDA: Measured-", delta^{13}, C[EAA]))) +
+  theme_classic() + guides(lty = "none")
+
+LDA.scat.Group
+dev.copy(pdf, "figures/Fig.5.Walak_LDA_sorc_consumer_rev.pdf", width=6.5, height=6)
+dev.off()
+```
+
+Check if normalization impacts the outcome of analysis. This "mean-centered" LDA is **Figure S6**.
+```{r LDA norm, results='hide', echo=FALSE}
 ##### Gut Check ##### 
 
 # Check if normalization impacts the outcome of analysis
 # Here us normalized EAAs instead of (raw) measured EAAs
 # TLDR: no difference in assignment, some differences in ordination (LD1 >>>) and Coral looking more like Reef Plankton
 
-########## LDA setup
+########## LDA setup NORMALIZED
 norm.df$SampleID<-as.factor(norm.df$SampleID)
 norm.df$Group<-as.factor(norm.df$Group)
 
@@ -569,10 +605,10 @@ All.lda.norm <- lda(Group ~Thrn + Valn + Leun + Phen + Lysn, data = prod.norm, C
 
 
 #Create a table which compares the classification from the LDA model to the actual classification
-All.reclass.norm <- table(prod.norm$Group, All.lda.norm$class) #100% success
+All.reclass.norm <- table(prod.norm$Group, All.lda.norm$class) 
 
 #Total percent of samples correctly classified is the sum of the diagonal of this table
-sum.dig.norm<-sum(diag(prop.table(All.reclass.norm))) #90/4%
+sum.dig.norm<-sum(diag(prop.table(All.reclass.norm))) #90.4%
 
 #Percent of each producer Group correctly reclassified: 91% for all groups
 reclass.norm<-diag(prop.table(All.reclass.norm, 1)) # (78% coral, 100% plankton, 92% reef)
@@ -584,16 +620,22 @@ All.reclass.norm
 All.train.norm <- lda(Group~ Thrn + Valn + Leun + Phen + Lysn, data = prod.norm)
 All.train.norm
 
-# plot LD1 and LD2 to show the sources
+# plot LD1 and LD2 to show the sources: NORMALIZED
 prod.norm$Group <-factor(prod.norm$Group, levels=c("PelagicPlankton", "ReefPlankton", "Coral"))
 
 Source.LDA.norm <- ggord(All.train.norm, prod.norm$Group, arrow=0,
                     txt = NULL, veclsz = 0, vectyp="blank", # remove vectors and arrows
-                    cols = c("dodgerblue", "springgreen4","coral"), grp_title = "Producers",
+                    cols = c("lightblue3", "olivedrab4","gold3"), grp_title = "Producers",
                     ellipse_pro = 0.99, xlim = c(-14,10), ylim = c(-8,6), alpha=0.5) + 
   theme_classic() + theme(legend.position = 'top')
 
-######## Classify Trevaly and Sharks ####
+
+#Create a data frame with these LDA coordinates NORMALIZED
+AllProdPredict.norm <- data.frame(SampleID = prod.norm$SampleID, Group = prod.norm$Group, 
+                                  LD.class = "Source", predict(All.train.norm)$x)
+
+
+######## Classify Trevaly and Sharks #### NORMALIZED
 ######## ######## ######## ######## #####
 
 # remove all samples, keep source
@@ -610,34 +652,260 @@ All.reclass.norm
 #  GS: 1 as PelagicPlank, 3 as ReefPlankton
 #  GT: 7 as PelagicPlank, 6 as ReefPlankton
 
-```
+############## stitch
 
-Plot the LDA with producer groups and the consumers. **This is Figure 5**
-```{r LDA figure, fig.cap="**Figure 5.** Linear discriminate analysis (LDA) of δ^13^C~EAA~ fingerprints from reef-associated plankton, pelagic plankton and coral compared with those of predators. Ellipses denote 95% confidence intervals for each source group.", results='hide'}
-#### plot it
-raw.norm.LD.data$Group<-factor(raw.norm.LD.data$Group, 
+# combine the consumer data and source LDA #
+LDA.df.norm<-rbind(cons.predict.data.norm, AllProdPredict.norm)
+
+# combine with raw and mean-normalized data and rearrange
+LD.data.norm <- merge(df, LDA.df.norm, by = "SampleID", all.x = TRUE)
+
+# remove extra column and rename the other
+LD.data.norm<- LD.data.norm %>% 
+  dplyr::select(-Group.y)
+LD.data.norm <- LD.data.norm %>% 
+  dplyr::rename("Group" = "Group.x")
+
+############# plot it
+LD.data.norm$Group<-factor(LD.data.norm$Group, 
                       levels=c("PelagicPlankton", "ReefPlankton", "Coral", 
                                "GT", "GS"))
 
-lda.5.colors <- c("dodgerblue", "springgreen4","coral", "gold", "darkgoldenrod")
-
-
-LDA.scat.Group <- ggplot(raw.norm.LD.data, aes(x = LD1, y = LD2))+
-  geom_point(size = 3.5, color="black",
+LD.data.norm.group <- ggplot(LD.data.norm, aes(x = LD1, y = LD2))+
+  geom_point(size = 4.5, color="black",
              aes(fill = Group, color = Group, shape = Group), alpha = 0.9) +
   stat_ellipse(type = "norm", level = 0.95, linewidth = 0.5, aes(lty = Group, color = Group))+
-  scale_color_manual(values = lda.5.colors)+
+  scale_color_manual(values = lda.5.lines)+
   scale_fill_manual(values = lda.5.colors)+
   scale_shape_manual(values = c(24, 24, 24, 21, 21))+
   scale_linetype_manual(values = c(2,2,2,0,0))+
-  xlab("LD1 (79.1%)") + ylab("LD2 (20.9%)") +
+  xlab("LD1 (96.5%)") + ylab("LD2 (3.5%)") +
+  ggtitle(expression(paste("LDA: Normalized ", delta^{13}, C[EAA]))) +
+  theme_classic() + guides(lty = "none")
+
+LD.data.norm.group
+dev.copy(pdf, "figures/Fig.S6.LDAnorm_sorc_consumer_rev.pdf", width=6.5, height=6)
+dev.off()
+```
+
+### EAA database
+Use fish proxies from studies across ocean provinces to test how well these guilds align. We use data from fishes and squid collected in...
+  
+- Central Pacific/Kiribati: `Ramirez et al. 2025`
+- Red Sea: `McMahon et al. 2016`
+- Indian Ocean: `Skinner et al. 2021`
+  
+We retain only fishes groups classified as corallivores and (in-shore and offshore) planktivores.  
+**This is Figure S5.**
+
+```{r database test}
+# load data
+df.lit<-read.csv("data/Endmember library.csv")
+df.lit<-df.lit[!df.lit$site %in% c("oceanic", "Oceanic"),]  # remove Kelton's ocean fishes, simialr to nearshore but some differences exist
+
+# parse data
+raw.df.lit<- df.lit %>% 
+  dplyr::select(source, ocean, location, site, sample.type, group, group.2, species.taxa, 
+                Thr13C, Val13C, Phe13C, Leu13C)
+
+# first, set the factor levels and make factors for columns
+make.fac <- c("source", "location", "site", "ocean", "group", "group.2")
+raw.df.lit[make.fac] <- lapply(raw.df.lit[make.fac], factor)
+raw.df.lit$Val13C<-as.numeric(raw.df.lit$Val)
+
+# simplify nmes
+raw.df.lit<- raw.df.lit %>%
+  dplyr::rename(Thr = Thr13C,
+                Val = Val13C,
+                Phe = Phe13C, 
+                Leu = Leu13C) 
+
+raw.df.lit <- raw.df.lit %>% dplyr::filter(!(Val %in% c(NA)))     # remove and NAs for 
+
+# remove unwanted groups for now
+raw.df.lit<-raw.df.lit[!raw.df.lit$group.2 %in% c("coral.host", "coral.symbiont"),]
+raw.df.lit$group.2<-droplevels(raw.df.lit$group.2) # drop sample levels
+
+## mean center data
+# make an ID column and run the mean normalization procedure
+raw.df.lit$SampleID <- 1:nrow(raw.df.lit)
+for(i in 1:length(raw.df.lit$SampleID)){
+  raw.df.lit$Thr.n[i] <- (raw.df.lit$Thr[i]-mean(as.numeric(raw.df.lit[i,9:12])))
+  raw.df.lit$Val.n[i] <- (raw.df.lit$Val[i]-mean(as.numeric(raw.df.lit[i,9:12])))
+  raw.df.lit$Phe.n[i] <- (raw.df.lit$Phe[i]-mean(as.numeric(raw.df.lit[i,9:12])))
+  raw.df.lit$Leu.n[i] <- (raw.df.lit$Leu[i]-mean(as.numeric(raw.df.lit[i,9:12])))
+}
+
+raw.norm.df.lit<-raw.df.lit
+
+##########################################
+##########################################
+# just the fishes
+# just consumers, but no detritivores
+df.cull<-raw.norm.df.lit[!(raw.norm.df.lit$source=="Meyer et al. in review"),]
+
+fish.df<-df.cull[df.cull$group.2 %in% c("corallivore", "reef.zooplanktivore", "pelagic.zooplanktivore"),]
+
+# remove all samples, keep source
+fish.df$group.2 <-factor(fish.df$group.2, levels=c("corallivore",
+                                             "reef.zooplanktivore", "pelagic.zooplanktivore"))
+fish.df$group.2<-droplevels(fish.df$group.2) # drop sample levels
+fish.df$source<-droplevels(fish.df$source) # drop sample levels
+
+###### remove outliers
+fish.outliers <- fish.df %>% dplyr::filter((SampleID %in% c(28, 287, 297, 298, 500, 435, 436)))
+fish <- fish.df %>% dplyr::filter(!(SampleID %in% c(28, 287, 297, 298, 500, 435, 436)))
+write.csv(fish, "output/Lit.fish.training.csv")  
+
+#### simplified dataframes
+fish.raw.df<- fish %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
+                              Thr, Val, Phe, Leu, SampleID)
+fish.norm.df <- fish %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
+                              Thr.n, Val.n, Phe.n, Leu.n, SampleID)
+
+
+##
+fish.lda <- lda(group.2 ~Thr + Val + Phe + Leu, data = fish.raw.df, CV = TRUE)
+
+#Create a table which compares the classification from the LDA model to the actual classification
+All.reclass <- table(fish$group.2, fish.lda$class) 
+sum(diag(prop.table(All.reclass))) #96%
+mean(fish.lda$class == fish$group.2) # mean accuracy
+
+#Percent of each fishucer Group correctly reclassified: 88% for all groups
+diag(prop.table(All.reclass, 1)) #96% corallivore, 98% reef zooplankton, 88% pelagic zooplanktivore
+
+#Create a training LDA function from the library data
+#Note - you can't use the 'All.lda' object above because the 'CV = TRUE' command was used to create it, and for some reason this won't work with the predict() function
+All.train <- lda(group.2~Thr + Val + Phe + Leu, data = fish.raw.df) #Thr + Val + Phe + Leu
+All.train
+
+lda.colors<- c("lightblue3", "olivedrab4", "goldenrod")
+
+fish.raw.df$group.2<-factor(fish.raw.df$group.2, levels=c("pelagic.zooplanktivore", "reef.zooplanktivore", "corallivore"))
+
+# plot LD1 and LD2 to show the sources
+Fish.LDA.Skin.McMa.Ram <- ggord(All.train, fish.raw.df$group.2, arrow=0,
+                    txt = NULL, veclsz = 0, vectyp="blank", # remove vectors and arrows
+                    cols = lda.colors,
+                    grp_title = "fish consumers",
+                    ellipse_pro = 0.95, xlim = c(-8,8), ylim = c(-6,6), alpha=0.6) + theme_classic() +
+  theme(legend.position = 'top')
+
+Fish.LDA.Skin.McMa.Ram
+dev.print(pdf, "figures/Fish.LDA.v1.pdf", height=7, width=8)
+dev.off()
+
+#Create a data frame with these LDA coordinates
+AllfishPredict <- data.frame(SampleID = fish.raw.df$SampleID, 
+                             species.taxa = fish.raw.df$species.taxa, 
+                             group.2 = fish.raw.df$group.2, 
+                             LD.class = "Source", 
+                             predict(All.train)$x)
+
+
+
+#######################
+# run PERMANOVA
+
+#factor to test
+fish.fac<- fish.raw.df %>% dplyr::select(group.2)
+fish.EAA.raw<- fish.raw.df %>% dplyr::select(Thr, Val, Phe, Leu)
+fish.EAA.norm<- fish.norm.df %>% dplyr::select(Thr.n, Val.n, Phe.n, Leu.n)
+
+##### raw data
+set.seed(51)
+EAA.perm.fish<-adonis2(fish.EAA.raw ~ group.2, data = fish.fac, 
+                         permutations = 999, method = "euclidian", by = "terms")
+EAA.perm.fish # Groups: different at p=0.001, R2=0.61
+
+# run pairwise
+set.seed(138)
+pairwise.adonis(fish.EAA.raw, factors = fish.raw.df$group.2, sim.method = "euclidian", p.adjust.m = "bonferroni")
+# all groups differ from each other
+
+
+############ normalized data (less good in R2 but same result)
+set.seed(151)
+EAA.perm.fish.norm<-adonis2(fish.EAA.norm ~ group.2, data = fish.fac, 
+                         permutations = 999, method = "euclidian", by = "terms")
+EAA.perm.fish.norm # Groups: different at p=0.001, R2=0.61
+
+# run pairwise
+set.seed(38)
+pairwise.adonis(fish.EAA.norm, factors = fish.norm.df$group.2, sim.method = "euclidian", p.adjust.m = "bonferroni")
+# all groups differ from each other
+
+
+######## ######## ######## ######## #####
+######## Classify Walaka predators  ####
+######## ######## ######## ######## #####
+# remove all samples, keep source
+Walak.df<-raw.norm.df.lit[(raw.norm.df.lit$source=="Meyer et al. in review"),]
+
+#only raw data
+Walak.df.raw<- Walak.df %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
+                              Thr, Val, Phe, Leu, SampleID)
+
+Walak.df.raw$group.2<-droplevels(Walak.df.raw$group.2) # drop sample levels
+
+Walak.df.predict <- predict(object = All.train, newdata = Walak.df.raw)
+
+Walak.df.predict.data <- data.frame(SampleID = Walak.df.raw$SampleID,
+                                    group.2 = Walak.df.raw$group.2, 
+                                    species.taxa = Walak.df.raw$species.taxa, 
+                                    LD.class = Walak.df.predict$class, 
+                                    Walak.df.predict$x)
+
+All.reclass <- table(Walak.df.raw$species.taxa, Walak.df.predict$class) 
+# GTrev: 9 inshore/zoopl, 4 off shore (pelagic), 
+# GShark: 4 inshore/zoopl
+
+
+# combine the consumer data and source LDA #
+LDA.df<-rbind(Walak.df.predict.data, AllfishPredict)
+
+LDA.pool<- rbind(fish, Walak.df)
+
+# combine with raw and mean-normalized data and rearrange
+LD.data <- merge(LDA.pool, LDA.df, by = "SampleID", all.x = TRUE)
+write.csv(LD.data, "output/LD.lit.data.csv")
+
+# remove extra column and rename the other
+LD.data<- LD.data %>% 
+  dplyr::select(-group.2.y, -species.taxa.y)
+LD.data <- LD.data %>% 
+  dplyr::rename("group.2" = "group.2.x",
+                "species.taxa" = "species.taxa.x")
+
+LD.data$group.2<-droplevels(LD.data$group.2)
+LD.data$group.2<-factor(LD.data$group.2, levels=c("pelagic.zooplanktivore", "reef.zooplanktivore", "corallivore", "reef.predator", "herbivore"))
+
+lda.3.colors<- c("lightblue3", "olivedrab4", "gold3")
+lda.3.lines<-c("lightblue4", "darkgreen","goldenrod")
+
+LD.data.source<-LD.data[!(LD.data$group.2=="reef.predator"),]
+LD.data.source$group.2<-droplevels(LD.data.source$group.2)
+
+LDA.scat.sorc <- ggplot(LD.data.source, aes(x = LD1, y = LD2))+
+  geom_point(size = 4, color="black",
+             aes(fill = group.2, color = group.2, shape = group.2), alpha = 0.9) +
+  stat_ellipse(type = "norm", level = 0.95, linewidth = 0.5, aes(lty = group.2, color = group.2))+
+  ylim(-4.5,5)+ xlim(-6,6)+
+  scale_color_manual(values = lda.4.colors)+
+  scale_fill_manual(values = lda.4.colors)+
+  scale_shape_manual(values = c(24, 24, 24, 24))+
+  scale_linetype_manual(values = c(2,2,2,2))+
+  xlab("LD1 (82%)") + ylab("LD2 (18%)") +
   ggtitle(expression(paste("LDA: Measured-", delta^{13}, C[EAA]))) +
   theme_classic() + guides(lty = "none")
 
-LDA.scat.Group
-dev.copy(pdf, "figures/Fig.5.Walak_LDA_sorc_consumer.pdf", width=7, height=6)
+LDA.scat.sorc
+dev.print(pdf, "figures/FigS6.LDA.scat.pdf", height=5.5, width=6.5)
 dev.off()
+
 ```
+
 
 ### MixSIAR
 LDA is great at classification, but cannot handle mixtures. Use a 3 member mixing model (reef plankton, pelagic plankton, coral) in MixSIAR to generate estimates of resource use. Once these models run, then perform *a posteriori* aggregation to generate estimates for 2 sources: inshore vs. offshore. 
@@ -909,6 +1177,7 @@ Mix.samp.EAAn.3 <- merge.data.frame(raw.norm.LD.data, Samp.out.cleaned.EAAn.3, b
 Mix.samp.EAAn.3$Source <- factor(Mix.samp.EAAn.3$Source, 
                                  levels = c("PelagicPlankton", "ReefPlankton", "Coral"))
 Mix.samp.EAAn.3$Mean<-as.numeric(Mix.samp.EAAn.3$Mean) 
+Mix.samp.EAAn.3$SD<-as.numeric(Mix.samp.EAAn.3$SD) 
 
 # plot it: some general formatting here for the plot...
 Fig.formatting <- 
@@ -924,11 +1193,12 @@ Fig.formatting <-
 
 
 ## plot the 3 sources and consumers
-Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean, fill = Source)) +
-  geom_boxplot(alpha = 0.9, color = "black")+
-  geom_point(aes(fill = Source), pch = 21, alpha = 0.5, color = "black", 
-             position = position_dodge(0.75))+
-  scale_fill_manual(values = c("dodgerblue", "springgreen4","coral")) +
+Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean)) +
+  geom_pointrange(aes(color=Source, x= Group:Source, ymin=Mean-SD, ymax=Mean+SD), 
+                  position = position_jitter(width=0.2), alpha=0.5) +
+  geom_boxplot(aes(color=Source, fill=Source, x= Group:Source), alpha = 0.55, size=0.6)+
+  scale_fill_manual(values = c("lightblue3", "chartreuse4","gold3")) +
+  scale_color_manual(values = c("lightblue4", "olivedrab4","goldenrod3"))+
   ylab("Proportional Contribution") +
   xlab(NULL) +
   ylim(0,1) +
@@ -937,7 +1207,7 @@ Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean, 
 
 #print and save
 Mix.samp.plot.EAAn.3
-dev.copy(pdf, "figures/Fig.6A.Walak_Fig.mixsiar.3sour.EAAn.pdf", width = 7, height = 5)
+dev.copy(pdf, "figures/Fig.6A.Walak_Fig.mixsiar.3sour.EAAn.rev2.pdf", width = 6, height = 6)
 dev.off()
 ```
 
@@ -994,14 +1264,18 @@ Mix.samp.EAAn.2 <- merge.data.frame(raw.norm.LD.data, samp.mix.reduced, by="Samp
 Mix.samp.EAAn.2$Source <- factor(Mix.samp.EAAn.2$Source, 
                                  levels = c("Offshore", "Inshore"))
 Mix.samp.EAAn.2$Mean<-as.numeric(Mix.samp.EAAn.2$Mean) 
+Mix.samp.EAAn.2$SD<-as.numeric(Mix.samp.EAAn.2$SD) 
 
-write.csv(Mix.samp.EAAn.2, "output/Walak_Mix.samp.EAAn.2sources.csv")
+Mix.samp.EAAn.2.simp<- Mix.samp.EAAn.2 %>% select(SampleID, Group, LD.class, Source, Mean, SD)
+write.csv(Mix.samp.EAAn.2.simp, "output/Walak_Mix.samp.EAAn.2sources_simple.csv")
 
 ########### plot
-Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Mean, fill = Source)) +
-  geom_boxplot(alpha = 0.9, color = "black")+
-  geom_point(aes(fill = Source), pch = 21, alpha = 0.5, color = "black", position = position_dodge(0.75))+
-  scale_fill_manual(values = c("dodgerblue","springgreen4")) +
+Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Mean)) +
+  geom_pointrange(aes(color=Source, x= Group:Source, ymin=Mean-SD, ymax=Mean+SD), 
+                  position = position_jitter(width=0.2), alpha=0.5) +
+  geom_boxplot(aes(color=Source, fill=Source, x= Group:Source), alpha = 0.5, size=0.6)+
+  scale_fill_manual(values = c("lightblue3", "chartreuse4")) +
+  scale_color_manual(values = c("lightblue4", "olivedrab4")) +
   ylab("Proportional Contribution") +
   xlab(NULL) +
   ylim(0,1) +
@@ -1010,7 +1284,7 @@ Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Me
 
 #print and save grouped with 2 categories
 Mix.samp.plot.EAAn.InOff
-dev.copy(pdf, "figures/Fig.NA.Walak_Fig.mixsiar.2sour.EAAn.pdf", width = 4, height = 5)
+dev.copy(pdf, "figures/Fig.NA.Walak_Fig.mixsiar.2sour.EAAn.rev.pdf", width = 4, height = 5)
 dev.off()
 ```
 

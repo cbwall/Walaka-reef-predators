@@ -1,0 +1,610 @@
+﻿source,ocean,latitude,longitude,location,site,sample.ID,sample.type,group,group.2,species.taxa,common.name,size.class.other,Thr13C,Ile13C,Val13C,Phe13C,Leu13C
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-2.71,-17.78,-30.34,-19.48,-24.05
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-9.98,-14.04,-19.94,-19.85,-23.12
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-7.19,-11.26,-21.83,-18.3,-25.24
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-3.64,-10.72,-18.75,-17.57,-22.34
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-2.86,-11.07,-23.86,-20.4,-23.57
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-6.55,-11.56,-22.68,-21.79,-25.04
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-6.13,-13.1,-25.38,-22.63,-25.85
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-7.42,-14.94,-19.3,-20.98,-24.22
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-2.37,-11.72,-17.45,-17.6,-21.52
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-2.63,-11.46,-21.01,-22.78,-23.81
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-2.28,-9.09,-21.33,-20.82,-23.21
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-1.46,-10.08,-20.68,-20.43,-23.64
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-5.67,-12.29,-21.47,-20,-25.03
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-3.13,-11.79,-16.66,-17.78,-22.28
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-3.37,-12.22,-23.67,-22.92,-26.19
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-3.71,-11.46,-22.04,-19.29,-23.03
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-1.16,-11.42,-22.15,-21.94,-23.84
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-5.05,-11.6,-18.88,-20.61,-27.2
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-3.62,-13.01,-22.13,-20.6,-26.65
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-1.58,-12.79,-23.3,-19.56,-25.02
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,1.09,-12.65,-21.98,-21.77,-25.33
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,1.56,-10.68,-20.17,-19.42,-22.99
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,0.75,-10.23,-19.94,-20.13,-22.11
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-0.49,-9.42,-20.67,-19.11,-22.42
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,symb.Pal,endosymbiont algae,Symbiodiniaceae,coral.symbiont,P meandrina,endosymbiont algae,,-3.04,-10.29,-21.47,-22.17,-24.65
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-7.31,-11.53,-21.1,-18.85,-22.92
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-4.41,-7.9,-18,-19.3,-22.92
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-9.22,-17.55,-17.99,-20.97,-24.81
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-5.5,-13.66,-19.54,-18.48,-22.4
+Fox et al. 2019,Central Pacific,,,Palmyra,reef,host.Pal,invertebrate,coral.host,coral.host,P meandrina,coral animal,,-7.48,-12.85,-21.13,-21.22,-24.65
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR13-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-9.99,-18.35,-22.25,-22.52,-23.5
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR3-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-7.76,-14.83,-19.24,-19.82,-22.05
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR4-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-11.33,-20.18,-25.76,-26.93,-27.57
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR5-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-8.02,-17.7,-22.19,-23.78,-24.03
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR7-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-9.61,-18.59,-25.37,-27.85,-27.37
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR13-POM,POM,POM,reef.plankton,POM,,>0.7um,-13.94,-19.17,-29.88,-26.38,-26.45
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR13-POM-2,POM,POM,reef.plankton,POM,,>0.7um,-13.21,-17.75,-25.04,-25.97,-25.96
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,fringe reef,MDF-FR3-POM1+2,POM,POM,reef.plankton,POM,,>0.7um,-9.93,-17.99,-22.81,-23.3,-25.37
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-West-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-4.99,-14.8,-21,-20.13,-24.35
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-EAST-PLKT-2,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-11.68,-17.17,-22.51,-21.71,-26.85
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-WEST-AINSLEY-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-7.64,-16,-20.19,-21.32,-22.26
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-CENT-PLKT,zooplankton,plankton,reef.plankton,zooplankton,,>163um,-7.34,-16.23,-19.16,-21.57,-23.47
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-East-Buoy-POM,POM,POM,reef.plankton,POM,,>0.7um,-11.11,-19.76,-23.71,-24.23,-28.01
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-WEST-Ainsley-POM,POM,POM,reef.plankton,POM,,>0.7um,-10.59,-16.41,-19.75,-21.48,-23.08
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-WEST-POM-2,POM,POM,reef.plankton,POM,,>0.7um,-5.61,-10.72,-16.4,-17.16,-20.55
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-CENT-POM,POM,POM,reef.plankton,POM,,>0.7um,-10.89,-19.59,-22.65,-25.22,-25.65
+Fox et al. Fun Ecol 2019,Central Pacific,,,Palmyra,lagoon,MDF-LAG-E-POM-2,POM,POM,reef.plankton,POM,,>0.7um,-11.62,-17.54,-23.84,-25.21,-22.83
+Hannides et al. LnO 2013,Central Pacific,,,Station Aloha,oceanic,Station Aloha,zooplankton,plankton,pelagic.plankton,pelagic.zooplanktivore,,200-500um,-12.4,-18.7,-22.8,-25.5,-25.4
+Hannides et al. LnO 2013,Central Pacific,,,Station Aloha,oceanic,Station Aloha,zooplankton,plankton,pelagic.plankton,pelagic.zooplanktivore,,500-1000um,-11.4,-17.2,-23.5,-27.1,-25.4
+Hannides et al. LnO 2013,Central Pacific,,,Station Aloha,oceanic,Station Aloha,zooplankton,plankton,pelagic.plankton,pelagic.zooplanktivore,,2000-5000um,-10.7,-17.4,-22.5,-25.1,-24.7
+Hannides et al. LnO 2013,Central Pacific,,,Station Aloha,oceanic,Station Aloha,POM,POM,pelagic.plankton,pelagic.zooplanktivore,,NA,-11.6,-19.2,-26.7,-25.5,-25.3
+Hannides et al. LnO 2013,Central Pacific,,,Station Aloha,oceanic,Station Aloha,POM,POM,pelagic.plankton,pelagic.zooplanktivore,,NA,-14.8,-21.8,-19.1,-27.8,-28.1
+McMahon et al. 2016,Red Sea,19.8923°N, 39.9591°W,Canyon Reef,Oceanic,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.5,-12.2,-22.1,-18,-22.1
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef,Oceanic,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-3.7,-11,-22.4,-18.7,-21.5
+McMahon et al. 2016,Red Sea,19.8296°N, 39.9267°W,MarMar Reef,Oceanic,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.6,-9.8,-22.1,-21.5,-23.9
+McMahon et al. 2016,Red Sea,19.8289°N,39.8987°W,Dohra Reef,Oceanic,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.5,-11.1,-22.1,-19,-23.1
+McMahon et al. 2016,Red Sea,19.8923°N, 39.9591°W,Canyon Reef,Oceanic,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-10.4,-16.6,-20.5,-24.1,-25.3
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef,Oceanic,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.6,-16.1,19.9,-23.4,-24.8
+McMahon et al. 2016,Red Sea,19.8296°N, 39.9267°W,MarMar Reef,Oceanic,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.8,-15.6,-19.9,-22.4,-24
+McMahon et al. 2016,Red Sea,19.8289°N,39.8987°W,Dohra Reef,Oceanic,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.6,-14.4,-19.8,-22,-24.4
+McMahon et al. 2016,Red Sea,19.8923°N, 39.9591°W,Canyon Reef,Oceanic,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-5.2,-7.9,-20.7,-19.5,-21.3
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef,Oceanic,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-4.3,-11.3,-21.3,-19.5,-21.6
+McMahon et al. 2016,Red Sea,19.8296°N, 39.9267°W,MarMar Reef,Oceanic,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-4.7,-10.7,-21.1,-21.2,-22.6
+McMahon et al. 2016,Red Sea,19.8289°N,39.8987°W,Dohra Reef,Oceanic,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-4.8,-11.3,-21,-17.7,-22.5
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-9.6,-14.5,-16.5,-19.2,-19.4
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-1.8,-11.7,-13.3,-16.4,-14.6
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-9.4,-16.2,-19.4,-22.4,-24
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,detritivore,detritivore,     C. striatus,,,-3.7,-12.4,-14.5,-17.4,-16.9
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,herbivore,herbivore,     C. sordidus,,,-6,-12.7,-15.7,-18,-18
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,zooplanktivore,zooplanktivore,     A. indicus,,,-9.7,-16.5,-21.4,-24.5,-24.3
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,herbivore,herbivore,     S. nigricans,,,-8.9,-15.1,-16.7,-20.7,-19
+McMahon et al. 2016,Red Sea,19.8923°N,39.9591°W,Canyon Reef ,Oceanic,,fish,piscivore,piscivore,     G. javanicus,,,-10.9,-15.9,-20.3,-24.1,-23.7
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-10.4,-15.6,-17.3,-20.1,20.4
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-0.7,-12.1,-13.4,-16.9,-14.8
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-10,-15.6,-19.1,-22.7,-23.5
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,detritivore,detritivore,     C. striatus,,,-3.8,-13.2,-15.2,-17.5,-15.9
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,herbivore,herbivore,     C. sordidus,,,-5,-13.6,-16.4,-17.8,-18.8
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,zooplanktivore,zooplanktivore,     A. indicus,,,-9.2,-16,-19.2,-23.2,-24
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,herbivore,herbivore,     S. nigricans,,,-10.3,-15.3,-16.9,-20.4,-20.1
+McMahon et al. 2016,Red Sea,19.8980°N,40.0062°W,Shi’b Sulaym Reef ,Oceanic,,fish,piscivore,piscivore,     G. javanicus,,,-9.2,-16.4,-20.9,-22.8,-23.9
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-7.8,-14.6,-16.6,-20.5,-20.7
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-3.5,-13.8,-14.4,-18.4,-16.7
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-8.6,-14.5,-18.7,-22,-23.2
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,detritivore,detritivore,     C. striatus,,,-4.4,-13.4,-14.5,-18.7,-17.6
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,herbivore,herbivore,     C. sordidus,,,-5.6,-14.2,-15.2,-19.9,-19
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,zooplanktivore,zooplanktivore,     A. indicus,,,-9.7,-16.7,-21.6,-22.4,-23.6
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,herbivore,herbivore,     S. nigricans,,,-9.3,-13.4,-16.9,-20,-20.9
+McMahon et al. 2016,Red Sea,19.8296°N,39.9267°W,MarMar Reef ,Oceanic,,fish,piscivore,piscivore,     G. javanicus,,,-8.1,-16,-20.7,-22.2,-24
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-8.7,-14.3,-16,-19.6,-19.5
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-2.5,-12.5,-13.1,-15.4,-14
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-8.4,-14.9,-18.7,-21.2,-22.7
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,detritivore,detritivore,     C. striatus,,,-5.5,-11.2,-14,-15.9,-15
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,herbivore,herbivore,     C. sordidus,,,-6.4,-12.7,-15.1,-18.7,-18.6
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,zooplanktivore,zooplanktivore,     A. indicus,,,-9.3,-14.3,-18.6,-21.9,-23.7
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,piscivore,piscivore,     S. nigricans,,,-8.4,-14.3,-16.4,-19.8,-18.9
+McMahon et al. 2016,Red Sea,19.8289°N, 39.8987°W,Dohra Reef,Oceanic,,fish,piscivore,piscivore,     G. javanicus,,,-7.5,-15.5,-20.2,-21.3,-24.2
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-1.8,-7.8,-22.1,-19.3,-23.3
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef,Shelf,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.1,-9.3,-21.2,-18.7,-22.3
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-3.6,-9.5,-22.3,-21.3,-21.5
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef,Shelf,,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-2.1,-7.9,-21.3,-19.3,-23.1
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.6,-17.8,-23.2,-24.7,-25.5
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef,Shelf,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8,-17.9,-23.2,-24.9,-26.6
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.7,-14,-21,-23.8,-23.3
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef,Shelf,,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.8,-16.3,-22.9,-23.8,-24.8
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-0.3,-9.6,-20.8,-18.7,-22.3
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef,Shelf,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-3.2,-10.4,-20.4,-18.1,-21.5
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-3.3,-8,-21.5,-21.5,-21.2
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef,Shelf,,fish,corallivore,corallivore,Chaetodon trifascialis,,NA,-1,-6.7,-20,-19,-22.3
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-9.7,-16.2,-18.3,-21.1,-22.7
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,0.1,-10.4,-12. 1,-16.1,-13.9
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-8.7,-16.7,-18.9,-21.1,-20.8
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,detritivore,detritivore,     C. striatus,,,-0.6,-12.6,-13.9,-17.7,-15.6
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,herbivore,herbivore,     C. sordidus,,,-4.5,-13.7,-16.2,-17.6,-20.1
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,zooplanktivore,reef.zooplanktivore,     A. indicus,,,-9.5,-17.1,-20.9,-23.2,-23.8
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,herbivore,herbivore,     S. nigricans,,,-10.7,-16.3,-18.1,-20.7,-20.8
+McMahon et al. 2016,Red Sea,20.1348°N,40.1012°W,Ron's Reef,Shelf,,fish,piscivore,piscivore,     G. javanicus,,,-8.2,-17.6,-21,-23.6,-23.3
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-10.7,-17,-19.4,-22.2,-21.7
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-1.2,-13.8,-14.3,-17.1,-14.5
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-8.4,-16.3,-18.5,-20.7,-21.5
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,detritivore,detritivore,     C. striatus,,,-2.6,-15.1,-15.3,-17.9,-16.8
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,herbivore,herbivore,     C. sordidus,,,-6.3,-14.5,-17.1,-19.1,-18.4
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,zooplanktivore,reef.zooplanktivore,     A. indicus,,,-9.4,-17.6,-21.4,-23.5,-24.1
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,herbivore,herbivore,     S. nigricans,,,-9.8,-15.4,-18.1,-21.2,-21.7
+McMahon et al. 2016,Red Sea,19.9582°N,40.2673°W,LJ's Reef ,Shelf,,fish,piscivore,piscivore,     G. javanicus,,,-6.4,-16.3,-21.8,-22.8,-23.6
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-8.7,-16.7,-17.6,-19.3,-20.3
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,0.6,-11.7,-12.3,-16.6,-14.1
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-7.9,-15.1,-16.8,-19,-20.1
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,detritivore,detritivore,     C. striatus,,,-3.3,-11.6,-14,-17.2,-17.4
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,herbivore,herbivore,     C. sordidus,,,-4.1,-13.7,-15.2,-18.1,-17.1
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,zooplanktivore,reef.zooplanktivore,     A. indicus,,,-8.4,-15.5,-19.8,-22.5,-22
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,herbivore,herbivore,     S. nigricans,,,-9.5,-15.4,-15.9,-18.4,-19.7
+McMahon et al. 2016,Red Sea,19.8875°N,40.1565°W,Saut Reef,Shelf,,fish,piscivore,piscivore,     G. javanicus,,,-6.1,-14.1,-19.7,-22.5,-22
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,,-7.7,-17.3,-18,-19.5,-22.4
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,sea cucumber,sea cucumber,detritivore,Holothuria  atra,,,-0.3,-11.4,-12.3,-16.5,-15.3
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,fish,reef.predator,reef.predator,     L. ehrenbergii,,,-8,-16.3,-17.6,-19.3,-22.1
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,fish,detritivore,detritivore,     C. striatus,,,-2.9,-13.9,-14.3,-18.3,-16.4
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,fish,herbivore,herbivore,     C. sordidus,,,-4.3,-13.3,-16.1,-18.4,-18.2
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,fish,zooplanktivore,reef.zooplanktivore,     A. indicus,,,-7.9,-16.1,-20.5,-22.5,-23.4
+McMahon et al. 2016,Red Sea,19.8556°N,40.2162°W,Brown Reef ,Shelf,,fish,herbivore,herbivore,     S. nigricans,,,-6.5,-16.2,-17,-19.2,-21.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr1,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-6.4,-13.6,-20.9,-20.1,-20.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr2,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.9,-14,-19,-20,-18.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr3,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.1,-14.6,-19.6,-20.2,-18.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr4,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.4,-12.5,-16.7,-20.1,-18.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr5,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.2,-16.8,-20.8,-22.3,-21.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr6,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.3,-14.2,-20.1,-21.1,-20
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr7,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.8,-16.5,-19.7,-22.5,-21.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr8,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.4,-16.4,-19,-21.7,-19.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr9,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7,-15.5,-20.1,-21.5,-20.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lehr10,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-6.5,-15.4,-18.8,-19.7,-18.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful1,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.7,-10.7,-20.5,-22.2,-22.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful2,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.3,-10.2,-21.9,-22.2,-22.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful3,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.4,-11.3,-22.9,-20.4,-22.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful4,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.3,-9.2,-22,-19.6,-18.8
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful5,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.2,-8.8,-20.2,-19.6,-20.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful6,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-7.2,-15.9,-20.7,-22.1,-23.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful7,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.9,-11.1,-21,-19.4,-20.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful8,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-7.1,-13.9,-22.3,-21.7,-22.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful9,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.8,-10.1,-22.8,-22.1,-23
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lful10,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.7,-11.8,-18.5,-18.7,-18.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas1,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.6,-18.7,-22.4,-25.5,-24
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas2,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-7.4,-16.7,-21.3,-22.4,-23.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas3,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.3,-16.2,-20.8,-23.7,-25.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas4,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.2,-16.4,-20.8,-23.1,-23.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas5,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-7.2,-15.4,-20.6,-23.1,-22.8
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas6,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.6,-16.8,-21.3,-22.1,-25
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas7,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.8,-15.5,-21.5,-23.8,-23.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas8,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.9,-15.3,-21.9,-22.9,-24.8
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas9,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.8,-18.7,-21.9,-23.5,-23.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Lkas10,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-6.9,-16.7,-21.4,-23.3,-25.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.4,-17.9,-21.2,-23.5,-25.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.3,-17,-22.1,-24.4,-26.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.5,-18.6,-22.1,-23.9,-25.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Macroalgae1,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-7.5,-15.6,-18.5,-20.9,-19.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Macroalgae2,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-9.3,-16,-19,-21.6,-20.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Macroalgae3,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-8.6,-15.2,-20,-21.2,-20.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.9,-10.8,-22.9,-20.3,-21.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.3,-7.5,-23.6,-20.3,-20.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.2,-10.4,-24.6,-20.9,-21.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Detritus1,invertebrate,detritus,detritivore,Holothuria atra,,NA,-4.1,-13,-13.6,-18.6,-15.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Detritus2,invertebrate,detritus,detritivore,Holothuria atra,,NA,-3.6,-11.8,-14.1,-17.5,-14.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Cape Al-Askar Reef,CAA_Detritus3,invertebrate,detritus,detritivore,Holothuria atra,,NA,-4.5,-13.1,-15.5,-18.1,-15.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr1,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.3,-17.1,-20.9,-23,-23.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr2,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.4,-16.9,-20.9,-22.7,-22
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr3,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.8,-17.2,-20.7,-22.4,-22.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr4,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10,-16,-20.3,-20.9,-20.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr5,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-6.2,-15.6,-21,-21.6,-18.8
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr6,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-6.5,-16,-20.2,-20.2,-20
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr7,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.5,-14.6,-19.5,-19.9,-18.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr8,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.4,-15.9,-21.3,-21.8,-20.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr9,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.4,-14.4,-20.8,-20.3,-19
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lehr10,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.4,-17,-20.2,-22,-23.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful1,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-9.3,-16.9,-21.2,-22.6,-24.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful2,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.8,-8.1,-20.3,-20.8,-22
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful3,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.2,-11.7,-21,-20.6,-22.4
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful4,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-13.1,-17.6,-22,-23.8,-23.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful5,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.7,-9,-20.6,-18.9,-20.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful6,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.3,-11.2,-20.7,-19.6,-20.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful7,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.3,-10.3,-19.6,-20.3,-20.8
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful8,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.8,-10.2,-21.7,-21.9,-24
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful9,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.9,-14.1,-20.8,-22.4,-23.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lful10,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.7,-10.6,-19.9,-20.3,-21.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas1,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9,-17.3,-21.4,-22.6,-24.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas2,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.9,-18.1,-22.1,-23.4,-24.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas3,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-5.5,-10.7,-20.8,-20.9,-22.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas4,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-5.3,-8.2,-15.1,-16.1,-15.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas5,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.8,-17.1,-21.4,-23.2,-22.7
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas6,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-11.5,-17.5,-21.2,-24.2,-25.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas7,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.4,-16.6,-21.7,-24.6,-24.2
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas8,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.5,-17,-21.2,-23.8,-23.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas9,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.1,-16.8,-20.9,-23.4,-24.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Lkas10,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.2,-16.6,-21,-23.6,-23.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.8,-18,-21.7,-23.4,-25.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.2,-16.9,-22.5,-24.1,-26.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.1,-18.6,-21.9,-23.8,-26.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Macroalgae1,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-7.1,-15.5,-18.4,-20.5,-19.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Macroalgae2,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-9.2,-16.3,-19.4,-21.1,-20.3
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Macroalgae3,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-8.3,-16.1,-20.4,-21.4,-20.1
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.6,-10.5,-22.6,-19.6,-21.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.6,-7.9,-23.2,-20.9,-21.9
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.3,-10.2,-24,-20.6,-21.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Detritus1,invertebrate,detritus,detritivore,Holothuria atra,,NA,-4.5,-13.5,-15.6,-18.3,-15.6
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Detritus2,invertebrate,detritus,detritivore,Holothuria atra,,NA,-3.1,-12.4,-15.2,-17.4,-14.5
+McMahon et al. 2025,Red Sea,,,Coastal Reef,Coast Guard Reef,CG_Detritus3,invertebrate,detritus,detritivore,Holothuria atra,,NA,-2.4,-11.4,-13.4,-16,-13.2
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.8,-18,-21.7,-23.4,-25.9
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.2,-16.9,-22.5,-24.1,-26.3
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.1,-18.6,-21.9,-23.8,-26.1
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.4,-17.9,-21.2,-23.5,-25.2
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.3,-17,-22.1,-24.4,-26.5
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.5,-18.6,-22.1,-23.9,-25.9
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.6,-10.5,-22.6,-19.6,-21.6
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.6,-7.9,-23.2,-20.9,-21.9
+McMahon et al. 2025,Red Sea,,,Coast Guard Reef,Coastal Reef,CG_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.3,-10.2,-24,-20.6,-21.6
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-5.9,-10.8,-22.9,-20.3,-21.6
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.3,-7.5,-23.6,-20.3,-20.9
+McMahon et al. 2025,Red Sea,,,Cape Al-Askar Reef,Coastal Reef,CAA_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.2,-10.4,-24.6,-20.9,-21.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr1,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.6,-16.3,-19.1,-20.9,-20.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr2,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.7,-16.1,-20.9,-20.9,-21.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr3,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.3,-16.9,-21.7,-23.6,-22.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr4,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-6.9,-15.9,-18.8,-20,-20.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr5,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.3,-16.2,-20.2,-22,-22.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr6,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.2,-16.3,-21.8,-21.3,-22.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr7,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.3,-16.7,-19.2,-20.7,-21.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr8,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-10.1,-16.8,-20.9,-22.2,-23.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr9,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.7,-17.2,-19.2,-21.4,-21.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lehr10,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.8,-15,-21,-20.3,-23.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful1,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.1,-12.9,-20.6,-19.9,-22.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful2,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.4,-10,-18.6,-18,-19.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful3,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.9,-11.4,-21.8,-20.1,-23.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful4,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.3,-14.5,-18.7,-20.9,-21.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful5,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.6,-8.8,-21.7,-17.6,-19.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful6,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.7,-10.7,-20.7,-18.1,-20.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful7,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6.7,-14.1,-21.5,-21.1,-23.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful8,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.4,-9.9,-20.8,-19,-19.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful9,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.9,-10.4,-21.3,-19.8,-21.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lful10,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.6,-12.5,-20,-20,-19.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas1,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.4,-17,-22.3,-23.7,-24.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas2,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-6.6,-15.8,-21.9,-23.4,-25.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas3,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9,-17.3,-22.1,-24.4,-25.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas4,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.5,-17.1,-23.4,-24.8,-25.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas5,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-6.5,-14.5,-23,-23,-24.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas6,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.8,-17.3,-23,-25.4,-25.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas7,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9,-17.9,-22.4,-24.3,-24.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas8,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-6.6,-15.3,-23.8,-23.7,-24.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas9,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-7,-16.5,-22,-24,-26
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Lkas10,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.4,-17.5,-23.5,-25.2,-25.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.2,-17.9,-23.2,-25.1,-26.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8,-18.3,-23.4,-24.9,-26.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.9,-17.5,-22.9,-24.7,-26.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Macroalgae1,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-9.5,-16,-20,-22.3,-20.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Macroalgae2,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-11.1,-17.3,-20.2,-21.9,-22
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Macroalgae3,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-11.4,-17.7,-20.8,-22.4,-22.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-3.1,-8.6,-22.8,-18.6,-22.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.2,-10.6,-23.6,-19,-21.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.9,-8.8,-23.1,-18.5,-22.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Detritus1,invertebrate,detritus,detritivore,Holothuria atra,,NA,-1.8,-12.3,-14.3,-16.5,-13.4
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Detritus2,invertebrate,detritus,detritivore,Holothuria atra,,NA,-5.1,-14.1,-14.1,-17.6,-15.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,LJ's Reef,LJs_Detritus3,invertebrate,detritus,detritivore,Holothuria atra,,NA,-4.3,-14.9,-14.5,-17.2,-14.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr1,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.2,-16.2,-20.6,-20.3,-21.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr2,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.1,-15.6,-18,-20.4,-21.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr3,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.9,-15.9,-18.1,-22,-19.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr4,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.2,-16.7,-18.7,-22,-21.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr5,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.6,-16.6,-19.5,-20.6,-21.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr6,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.2,-14.8,-18.7,-19.2,-21.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr7,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-8.3,-14.8,-17.3,-20.3,-20.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr8,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.5,-16.5,-20,-21.8,-22.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr9,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-7.4,-15.6,-19.8,-19.7,-20.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lehr10,fish,predator,reef.predator,Lutjanus ehrenbergii,Blackspot snapper,,-9.8,-17,-20.8,-22.6,-23.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful1,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4,-9.9,-19.9,-19.6,-22.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful2,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.4,-10.6,-21.9,-20.6,-24
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful3,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-2.7,-9.6,-18.3,-17,-19.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful4,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-6,-12,-22.4,-20.8,-23.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful5,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.9,-11.8,-23.3,-22.5,-23.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful6,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.3,-9.1,-23.4,-20.7,-24.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful7,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-3.4,-10.1,-18.3,-17.5,-19.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful8,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.9,-10.3,-20,-19.8,-22.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful9,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-5.5,-12.1,-23.6,-22.8,-23.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lful10,fish,predator,reef.predator,Lutjanus fulviflamma,Dory snapper,,-4.4,-10.9,-22.7,-20.9,-24.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas1,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.7,-17.1,-22.6,-23,-24
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas2,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.2,-17.4,-22,-23.3,-24.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas3,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.5,-16.5,-20.3,-20.9,-23.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas4,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-4.5,-10.7,-18.8,-18.5,-22
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas5,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-11,-16.7,-22.5,-24.9,-25.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas6,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-8.5,-16.9,-22.7,-23.3,-23.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas7,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.9,-16.6,-21.9,-23.4,-24
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas8,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-10.1,-16.9,-21.3,-23.9,-23.5
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas9,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-9.4,-17,-22.8,-22.9,-24.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Lkas10,fish,predator,reef.predator,Lutjanus kasmira,Bluestripe snapper,,-5.8,-12.7,-21.9,-21.9,-24.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.6,-18.2,-23.5,-25,-24.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-10.5,-17.3,-22.9,-24.3,-25.3
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.9,-17.9,-23.3,-24.5,-25.2
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Macroalgae1,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-10,-16.1,-19.7,-22,-22.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Macroalgae2,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-8.8,-15.4,-18.4,-20.1,-21.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Macroalgae3,macroalgae,macroalgae,macroalgae,Womersleyella setacea,,NA,-10.3,-17.2,-19.7,-21.2,-22.7
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-1.2,-7.5,-23.9,-19.5,-23.9
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-1.8,-7.6,-24.4,-18.8,-23.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-2.3,-8.4,-24,-19.6,-22.8
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Detritus1,invertebrate,detritus,detritivore,Holothuria atra,,NA,-3.4,-10.1,-12.2,-16.5,-12.6
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Detritus2,invertebrate,detritus,detritivore,Holothuria atra,,NA,-3,-9.9,-11.4,-15.8,-13.1
+McMahon et al. 2025,Red Sea,,,Shelf Reef,Ron's Reef,Rons_Detritus3,invertebrate,detritus,detritivore,Holothuria atra,,NA,-2.6,-11.2,-12.8,-16,-13.9
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.6,-18.2,-23.5,-25,-24.9
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-10.5,-17.3,-22.9,-24.3,-25.3
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-9.9,-17.9,-23.3,-24.5,-25.2
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Plankton1,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8.2,-17.9,-23.2,-25.1,-26.4
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Plankton2,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-8,-18.3,-23.4,-24.9,-26.9
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Plankton3,zooplankton,plankton,reef.plankton,calanoid copepods,,<333,-7.9,-17.5,-22.9,-24.7,-26.4
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-1.2,-7.5,-23.9,-19.5,-23.9
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-1.8,-7.6,-24.4,-18.8,-23.1
+McMahon et al. 2025,Red Sea,,,Ron's Reef,Shelf Reef,Rons_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-2.3,-8.4,-24,-19.6,-22.8
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Coral1,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-3.1,-8.6,-22.8,-18.6,-22.7
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Coral2,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.2,-10.6,-23.6,-19,-21.9
+McMahon et al. 2025,Red Sea,,,LJ's Reef,Shelf Reef,LJs_Coral3,invertebrate,coral holobiont,coral,Acropora pharaonis,,NA,-4.9,-8.8,-23.1,-18.5,-22.4
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_1,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.1,NA,-17.4,-20.3,-19
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_2,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-10,NA,-17.1,-22.1,-21.5
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_3,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.3,NA,-18.2,-20.2,-20
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_4,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.6,NA,-18.9,-23.3,-20.9
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_5,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-7.5,NA,-18.7,-21.3,-20.2
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_6,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-9.7,NA,-19,-22.9,-21.1
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_7,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-7.8,NA,-17.8,-21.1,-19.2
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_8,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-9.7,NA,-19.8,-22.8,-21.5
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_9,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,NA,NA,NA,NA,NA
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_10,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.2,NA,-20.1,-23.3,-22.1
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_11,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.6,NA,-19,-23.2,-21.3
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_12,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-8.4,NA,-19.2,-20.3,-21.5
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_13,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-9,NA,-19.9,-20.4,-21.5
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GT_14,fish,reef.predator,reef.predator,Caranx ignobilis,Giant Trevally,,-9.3,NA,-18.5,-20,-20.9
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GS_1,fish,reef.predator,reef.predator,Carcharhinus galapagensis,Galapagos Shark,,-8.1,NA,-19.2,-19.8,-21.4
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GS_2,fish,reef.predator,reef.predator,Carcharhinus galapagensis,Galapagos Shark,,-7.7,NA,-17.5,-21.2,-21.6
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GS_3,fish,reef.predator,reef.predator,Carcharhinus galapagensis,Galapagos Shark,,-6.6,NA,-16.1,-21.3,-20.6
+Meyer et al. in review,Central Pacific,,,Northwestern Hawaiian Islands,NA,GS_4,fish,reef.predator,reef.predator,Carcharhinus galapagensis,Galapagos Shark,,-8.2,NA,-17.4,-19.5,-21
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_240,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.47,-15.69,-19.98,-27.21,-23.92
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_237,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.05,-14.49,-21.87,-25.88,-24.67
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_238,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.21,-14.53,-21.76,-25.84,-24.56
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_239,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.97,-14.58,-21.96,-25.84,-24.51
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,CEPARG033,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.59,-15.17,-19.7,-27.52,-23.79
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_050,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-7.81,-14.51,-19.93,-24.55,-23.03
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_232,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-7.4,-13.99,-19.84,-24.69,-23.07
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_333,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-7.6,-14.05,-19.13,-23.97,-22.18
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_381,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-7.18,-8.65,-21.58,-21.35,-22.43
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_382,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.49,-8.68,-21.19,-20.85,-22.34
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_072,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-7.95,-9.49,-21.6,-20.63,-23.73
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_346,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-5.23,-8.88,-20.01,-18.92,-20.98
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_347,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-7.06,-9.76,-22.7,-21.6,-22.94
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,CEPURO030,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-7.6,-14.94,-19.27,-25.82,-24.78
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF12_457,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.73,-15.75,-21.66,-25.72,-25.55
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,LUTBOH012,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.89,-15.27,-19.04,-27.11,-24.25
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF11_444,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.39,-15.38,-20.16,-25.64,-23.91
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,LUTFUL009,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-5.749614334,-9.893335165,-15.88726911,-20.37637944,-18.85456127
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF11_579,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-4.64,-17.92,-24.1,-26.98,-25.05
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,8,KIF11_577,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-10.47,-13.91,-20.47,-22.61,-22.07
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_335,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-9.06,-16.84,-22.23,-26.25,-25.45
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,CEPURO026,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.14,-15.13,-20.9,-24.9,-23.94
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_225,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-6.52,-15.37,-21.92,-26.38,-24.6
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_344,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.73,-15.07,-21.28,-26.62,-24.92
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,LUTFUL019,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-5.02,-11.36,-14.8,-18.64,-17.01
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,LUTFUL027,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-5.912377097,-12.21186727,-16.44473578,-20.31220111,-19.02581509
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,LUTFUL017,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-5.53,-11.48,-16.45,-20.5,-18.71
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,LUTFUL034,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.63,-14.33,-19.9,-24,-23.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_569,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-5.87,-17.6,-24.21,-27.36,-25.51
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_570,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-7.12,-17.02,-23.81,-26.89,-25.69
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_566,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.95,-16.88,-23.59,-26.54,-26.04
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,10,KIF11_567,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.69,-16.52,-23.44,-26.3,-25.91
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,11,KIF11_302,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-10.11,-16.24,-23.04,-25.89,-25.56
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,14,ACANIG161,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.75,-19.26,-22.88,-27.52,-23.62
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_254,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.02,-16.4,-20.99,-27.94,-24.87
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_316,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.97,-16.65,-21.54,-26.69,-24.92
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_370,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.82,-16.68,-21.68,-27.17,-24.94
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_253,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.21,-16.33,-22.44,-26.28,-25.29
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,ACANIG129,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-10.02,-17.75,-20.52,-22.98,-22.16
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,ACANIG142,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-9.57,-17.02,-20.64,-22.82,-21.35
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,ACANIG052,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-11.15,-16.42,-21.28,-23.39,-20.95
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,ACANIG054,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-10.99,-16.19,-20.62,-22.09,-20.46
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,ACANIG057,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-10.47,-16.12,-19.26,-22.81,-19.88
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,CEPARG008,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.22,-15.61,-20.08,-25.67,-22.89
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,CEPARG011,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.1,-14.54,-18.88,-24.75,-22.16
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_312,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-7.25,-15.53,-19.91,-26.72,-23.55
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_248,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-9.4,-13.91,-20.91,-26.06,-24.52
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_249,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-8.9,-14.62,-20.61,-25.77,-23.8
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_311,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-9.55,-15.19,-21.73,-26.29,-24.44
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_263,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-7.78,-9.59,-21.98,-22.16,-22.88
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_328,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.91,-9.88,-23.93,-22.37,-23.33
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_247,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-5.62,-10.32,-19.95,-20.14,-21.14
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_258,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.67,-9.87,-21.5,-21.67,-23.26
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_262,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.8,-9.77,-21.66,-21.54,-23.28
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF11_212,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.467932653,-14.72562874,-20.32940244,-24.57088436,-23.80685485
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF11_277,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-6.07,-13.5,-19.43,-25.42034004,-23.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_259,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.54,-14.72,-20.48,-24.73,-23.48
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,LUTBOH013,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.85,-16.6,-20.91,-26.58,-24.65
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,LUTBOH014,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.43,-16.39,-20.91,-26.51,-24.25
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF12_313,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.401265986,-14.93400795,-19.43060244,-25.51945875,-24.15486708
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,LUTFUL014,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-6.28,-11.85,-16.35,-21.11,-19.46
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF11_276,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-7.25,-13.36,-18.96,-21.89,-20.88
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF11_104,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.32,-14.68,-17.9,-21.88,-21.1
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,15,KIF11_177,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-7.87,-13.38,-18.45,-21.69,-20.38
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,16,CEPARG028,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.02,-14.39,-18.83,-25,-22.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF12_187,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.95,-15.94,-22.13,-26.02,-25.19
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF12_192,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.16,-15.88,-21.98,-25.77,-24.93
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,CEPARG121,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.76,-14.22,-18.33,-25.19,-22.89
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,CEPARG160,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-8.77,-14.71,-18.38,-25.51,-23.04
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF12_197,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-9.21,-14.21,-20.97,-26.25,-24.59
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF11_101,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.14,-14.93,-19.24,-24.75636907,-23.66
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF12_190,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.82,-13.94,-20.91,-26.64,-23.91
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF11_210,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-7.62,-13.24,-20.29,-22.21,-20.75
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,19,KIF11_208,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-7.4,-14.08,-18.58,-21.57,-20.01
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_128,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-8.04,-15.29,-20.15,-25.41,-23.65
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_162,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.91,-13.75,-18.59,-24.98,-21.99
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,CEPARG056,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.32,-15.06,-19.99,-26.9,-23.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_051,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.23,-13.98,-18.46,-24.37,-21.34
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_118,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-7.03,-14.35,-18.96,-24.56,-21.65
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_050,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-4.409223944,-11.0368214,-17.41566911,-22.0387952,-19.87437778
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_171,fish,piscivore,piscivore,Caranx melampygus,bluefin trevally,,-8.99,-13.7,-20.98,-24.99,-23.85
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,CEPURO039,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-6.97,-14.74,-20.67,-25.13,-24.83
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,CEPURO061,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.49,-15.5,-21.11,-25.54,-24.41
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,LUTFUL062,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-5.433398118,-10.46691315,-14.87673578,-19.34071329,-18.10960714
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_138,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.77,-14.95,-22.62,-23.07,-22.78
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_055,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-5.63,-12.28,-17.25,-19.59,-19.88
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_117,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-6.22,-11.79,-17.86,-20.09,-20.86
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,27,KIF11_136,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-6.73,-12.27,-18.47,-20.43,-20
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_176,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-7.67,-14.61,-21.05,-25.81,-24.54
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_177,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.13,-14.58,-21.62,-25.97,-24.79
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_203,fish,piscivore,piscivore,Aphareus furca,small toothed jobfish,,-8.28,-14.1,-22.08,-25.9,-24.62
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,ACANIG154,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-11.85,-18.91,-22.68,-26.12,-23.19
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,ACANIG155,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-11.89,-19.21,-23.17,-25.76,-23.26
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,ACANIG050,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.21,-17.4,-22.14,-24.08,-22.53
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,ACANIG104,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-9.91,-14.32,-19.52,-21.41,-19.15
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,ACANIG105,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-11.17,-17.09,-20.82,-23.28,-20.88
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_004,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.43,-9.66,-21.1,-20.6,-22.73
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_022,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.06,-10.72,-21.14,-20.77,-22.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_023,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.37,-8.13,-20.73,-20.9,-22.25
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_005,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.2,-8.97,-21,-20.21,-21.9
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_021,fish,corallivore,corallivore,Chaetodon ornatissimus,ornate butterflyfish,,-6.07,-8.33,-20.24,-19.66,-21.49
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,CEPURO014,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-7.92,-14.34,-20.28,-24.78913216,-23.79
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_345,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.7,-16.27,-22.53,-26.02,-25.33
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_343,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-8.55,-14.32,-21.12,-25.47,-24.39
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_130,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-9.34,-15.64,-20.98,-26.8,-24.87
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,LUTBOH011,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.5,-16.26,-20.85,-26.68,-24.45
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_007,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.11,-14.15,-21.57,-25.91,-23.69
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_125,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.94,-14.48,-20.37,-25.73,-24.27
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_174,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-5.77483956,-13.47535351,-19.09033578,-23.65154792,-22.03706891
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,LUTFUL002,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.31,-14.31,-19.92,-24.53,-23.76
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,LUTFUL008,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-6.35,-11.86,-16.35,-19.71,-18.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,LUTFUL039,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.24,-14.46,-19.69,-23.99,-23.12
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,LUTFUL038,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.81,-14.39,-19.68,-24.41,-23.11
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF11_483,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.89,-18.04,-23.72,-27.06,-26.55
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,PSEOLI032,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-8.51,-17.18,-23.65,-26.89,-25.62
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,PSEOLI034,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-8.9,-17.38,-22.65,-26.57,-25.3
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF11_486,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.38,-17.53,-22.72,-26.48,-26.15
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,PSEOLI030,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-10.27,-16.5,-23.21,-26.14,-25.34
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,30,KIF12_134,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-7.29,-14.41,-20.93,-22.75,-21.72
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,ACANIG146,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.67,-18.38,-22.8,-25.7,-23.25
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,CEPARG130,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-5.97,-15.25,-19.01,-24.98,-22.76
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,KIF11_018,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-7.62,-16.19,-20.88,-26.58,-24.8
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,LUTFUL055,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-6.040004725,-12.50177553,-17.96806911,-21.94257954,-21.12122794
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,LUTFUL001,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-4.293908629,-9.973457489,-14.09526911,-18.29084289,-17.25150317
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,PSEOLI006,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-8.56,-17.06,-23.03,-26.36,-25.48
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,KIF11_001,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.75,-12.03,-18.97,-22.13,-20.56
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,34,KIF11_002,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.61,-13.41,-18.7,-22.12,-20.86
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,ACANIG043,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.7,-18.42,-22.2,-24.55,-23.64
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,ACANIG044,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.93,-18.67,-22.8,-24.83,-23.77
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,ACANIG045,fish,herbivore,herbivore,Acanthurus nigricans,goldrim surgeonfish,,-12.58,-18.01,-21.94,-23.73,-23.38
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,CEPARG156,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-8.59,-13.97,-18.61,-25.11,-22.98
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,CEPARG096,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-8.18,-15.21,-19.9,-26.27,-23.25
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,CEPARG099,fish,piscivore,piscivore,Cephalopholis argus,peacock hind,,-6.89,-15.07,-18.61,-25.18,-21.63
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,CEPURO027,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-7.94,-15.07,-20.49,-25.03,-24.24
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_497,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-7.82,-14.3,-20.72,-25.21,-24.36
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,CEPURO024,fish,generalist carnivore,reef.predator,Cephalopholis urodeta,darkfin hind,,-7.73,-14.26,-20.14,-25.19,-24.17
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_025,fish,piscivore,piscivore,Lutjanus bohar,two-spot red snapper,,-8.62,-17.36,-21.85,-26.7,-24.76
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,LUTFUL005,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.25,-14.52,-19.83,-24.59,-23.58
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,LUTFUL053,fish,generalist carnivore,reef.predator,Lutjanus fulvus,blacktail snapper,,-7.400515235,-14.76978776,-20.02993578,-24.58477757,-23.68575393
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_559,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.41,-17.95,-22.82,-26.51,-26.57
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_560,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-9.24,-16.92,-22.58,-26,-25.92
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_562,fish,zooplanktivore,reef.zooplanktivore,Pseudanthias olivaceus,olive anthius,,-11,-16.94,-23.36,-26.16,-26.56
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_178,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.39,-13.03,-19.03,-21.94,-20.74
+Ramirez et al. 2025,Central Pacific,,,Kiritimati Island,35,KIF11_099,fish,detritivore,detritivore,Ctenochaetus marginatus,blue-spotted bristletooth,,-8.17,-13.63,-18.44,-21.46,-20.69
+Skinner et al. 2021,Indian Ocean,4.318,73.4308,Maldives,Inner,CaVa1,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-14.08,NA,-25.58,-21.18,-24.16
+Skinner et al. 2021,Indian Ocean,4.3455,73.4217,Maldives,Inner,CaVa2,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-13.74,NA,-25.82,-21.75,-25.76
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,CaXa1,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-12.91,NA,-24.49,-21.1,-23.81
+Skinner et al. 2021,Indian Ocean,4.339467,73.386517,Maldives,Inner,CeArg1,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-3.69,NA,-17.38,-21.91,-18.34
+Skinner et al. 2021,Indian Ocean,4.32675,73.3968,Maldives,Inner,CeArg13,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-6.84,NA,-17.87,-21.61,-18.55
+Skinner et al. 2021,Indian Ocean,4.339467,73.386517,Maldives,Inner,CeArg16,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-7.72,NA,-19.59,-23.58,-20.3
+Skinner et al. 2021,Indian Ocean,4.290533,73.408733,Maldives,Inner,CeArg17,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-5,NA,-19.65,-22.7,-20.35
+Skinner et al. 2021,Indian Ocean,4.26885,73.4211,Maldives,Inner,CeArg2,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-8.31,NA,-21.52,-22.44,-21.74
+Skinner et al. 2021,Indian Ocean,4.290533,73.408733,Maldives,Inner,CeArg20,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-4.64,NA,-20.04,-23.21,-19.86
+Skinner et al. 2021,Indian Ocean,4.290533,73.408733,Maldives,Inner,CeArg21,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-4.18,NA,-19.18,-24.44,-20.7
+Skinner et al. 2021,Indian Ocean,4.28295,73.437333,Maldives,Inner,CeArg3,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-3.98,NA,-19.71,-23.05,-20.03
+Skinner et al. 2021,Indian Ocean,4.339467,73.386517,Maldives,Inner,CeArg8,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-6.06,NA,-21.48,-24.23,-22.04
+Skinner et al. 2021,Indian Ocean,4.302017,73.437233,Maldives,Inner,CeMin1,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-5.06,NA,-19.78,-21.72,-21.48
+Skinner et al. 2021,Indian Ocean,4.28295,73.437333,Maldives,Inner,CeMin10,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-5.12,NA,-19.97,-23.69,-21.13
+Skinner et al. 2021,Indian Ocean,4.317728,73.430655,Maldives,Inner,CeMin16,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-5.3,NA,-20.75,-20.88,-21.55
+Skinner et al. 2021,Indian Ocean,4.302017,73.437233,Maldives,Inner,CeMin2,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-6.4,NA,-22.32,-23.61,-21.55
+Skinner et al. 2021,Indian Ocean,4.290533,73.408733,Maldives,Inner,CeMin3,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-5.19,NA,-23.02,-22.37,-21.72
+Skinner et al. 2021,Indian Ocean,4.290533,73.408733,Maldives,Inner,CeMin4,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-8.01,NA,-19.12,-25.63,-20.78
+Skinner et al. 2021,Indian Ocean,4.26885,73.4211,Maldives,Inner,CeMin5,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-4.81,NA,-17.77,-23.37,-19.89
+Skinner et al. 2021,Indian Ocean,4.317728,73.430655,Maldives,Inner,CeMin6,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-6.48,NA,-21.04,-23.55,-21.3
+Skinner et al. 2021,Indian Ocean,4.26885,73.4211,Maldives,Inner,CeMin7,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-6.97,NA,-21.48,-25.23,-22.37
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,ChMey1,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-8.76,NA,-22,-15.46,-20.46
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,ChMey2,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-9.4,NA,-22.91,-15.42,-22.5
+Skinner et al. 2021,Indian Ocean,4.34,73.3908,Maldives,Inner,ChMey3,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-12.55,NA,-23.22,-17.49,-22.39
+Skinner et al. 2021,Indian Ocean,4.3224,73.4072,Maldives,Inner,CtStr2,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-14.22,NA,-18.6,-14.98,-18.15
+Skinner et al. 2021,Indian Ocean,4.2989,73.4418,Maldives,Inner,CtStr3,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-15.75,NA,-21.91,-17.78,-22.1
+Skinner et al. 2021,Indian Ocean,4.2989,73.4418,Maldives,Inner,CtStr4,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-14.17,NA,-16.7,-18.13,-17.62
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,CtStr5,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-12.63,NA,-16.81,-17.28,-17.28
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,CtStr6,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-15.33,NA,-20.35,-16.31,-19.7
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,CtStr7,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-16.39,NA,-20.81,-18.94,-20.6
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,MyVio1,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-13.38,NA,-22.1,-23.63,-22.57
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,MyVio2,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.6,NA,-23.85,-20.61,-22.96
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,MyVio3,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-14.02,NA,-23.92,-21.09,-22.92
+Skinner et al. 2021,Indian Ocean,4.3455,73.4217,Maldives,Inner,MyVio4,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.41,NA,-23.29,-20.81,-22.91
+Skinner et al. 2021,Indian Ocean,4.3455,73.4217,Maldives,Inner,MyVio5,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.26,NA,-23.15,-20.62,-23.02
+Skinner et al. 2021,Indian Ocean,4.3455,73.4217,Maldives,Inner,MyVio6,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-13.4,NA,-25.82,-21.05,-23.34
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,AcLeu1,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-15.77,NA,-21.48,-16.62,-19.91
+Skinner et al. 2021,Indian Ocean,4.318,73.4308,Maldives,Inner,AcLeu3,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-15.33,NA,-20.63,-15.98,-17.58
+Skinner et al. 2021,Indian Ocean,4.318,73.4308,Maldives,Inner,AcLeu4,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-17.69,NA,-20.07,-15.95,-17.98
+Skinner et al. 2021,Indian Ocean,4.34,73.3908,Maldives,Inner,AcLeu5,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-14.24,NA,-18.54,-16.16,-16.22
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,AcLeu6,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-16,NA,-21.04,-16.06,-18.45
+Skinner et al. 2021,Indian Ocean,4.2895,73.3971,Maldives,Inner,AcLeu7,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-15.3,NA,-19.85,-16.6,-17.04
+Skinner et al. 2021,Indian Ocean,4.34,73.3908,Maldives,Inner,AcLeu8,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-17.75,NA,-18.87,-18.73,-17.57
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaVa3,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-15.02,NA,-25.99,-22.41,-24.91
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaVa4,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-12.5,NA,-22.06,-20.52,-22.63
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaVa5,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-16.4,NA,-27.74,-22.86,-25.82
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaVa6,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio varilineata,Fusiliers,,-14.48,NA,-27.04,-21.76,-24.56
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CaXa2,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-14.88,NA,-25.2,-22.24,-24.67
+Skinner et al. 2021,Indian Ocean,4.2928,73.3437,Maldives,Outer,CaXa3,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-13.41,NA,-23.88,-22.77,-22.93
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaXa4,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-10.6,NA,-20.91,-20.34,-21.47
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaXa5,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-14.88,NA,-25.08,-21.64,-23.91
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaXa6,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-13.6,NA,-22.28,-21.04,-22.34
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,CaXa7,fish,diurnal.reef.plankton,reef.zooplanktivore,Caesio xanthonota,Fusiliers,,-10.47,NA,-21.57,-19.34,-22.17
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeArg11,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-6.3,NA,-17.9,-25.36,-20.32
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeArg12,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-6.78,NA,-19.31,-25.12,-21.08
+Skinner et al. 2021,Indian Ocean,4.427067,73.3562,Maldives,Outer,CeArg14,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-4.59,NA,-18.41,-25.33,-20.34
+Skinner et al. 2021,Indian Ocean,4.427067,73.3562,Maldives,Outer,CeArg15,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-5.3,NA,-19.46,-24.01,-20.63
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeArg4,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-5.63,NA,-19.4,-24.11,-20.65
+Skinner et al. 2021,Indian Ocean,4.312233,73.3406,Maldives,Outer,CeArg5,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-7.78,NA,-19.21,-24.56,-20.48
+Skinner et al. 2021,Indian Ocean,4.312233,73.3406,Maldives,Outer,CeArg6,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-10.8,NA,-26.81,-25.16,-24.8
+Skinner et al. 2021,Indian Ocean,4.312233,73.3406,Maldives,Outer,CeArg7,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-7.23,NA,-21.85,-22.52,-22.58
+Skinner et al. 2021,Indian Ocean,4.220472,73.356528,Maldives,Outer,CeArg9,fish,predator,reef.predator,Cephalopholis argus,Groupers,,-9.27,NA,-20.86,-24.83,-20.8
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin11,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-8.86,NA,-19.28,-25.62,-21.52
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin12,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-8.58,NA,-19.53,-25.57,-21.69
+Skinner et al. 2021,Indian Ocean,4.3211,73.3403,Maldives,Outer,CeMin13,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-6.93,NA,-19.55,-24.22,-21
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin18,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-7.52,NA,-21.52,-26.53,-22.58
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin20,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-8.56,NA,-19.66,-25.79,-21.57
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin21,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-4.81,NA,-21.07,-25.33,-21.86
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin22,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-4.49,NA,-20.37,-21.71,-21.46
+Skinner et al. 2021,Indian Ocean,4.34805,73.3404,Maldives,Outer,CeMin8,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-5.7,NA,-19.67,-23.64,-21.71
+Skinner et al. 2021,Indian Ocean,4.294033,73.343833,Maldives,Outer,CeMin9,fish,predator,reef.predator,Cephalopholis miniata,Groupers,,-7.7,NA,-21.41,-26.58,-21.79
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,ChMey4,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-7.04,NA,-20.8,-14.26,-18.22
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,ChMey5,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-7.22,NA,-18.38,-14.34,-19.23
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,ChMey6,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-7.18,NA,-20.44,-14.19,-18.45
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,ChMey7,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-7.31,NA,-19.07,-13.6,-17.57
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,ChMey8,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-7.15,NA,-20.8,-15.26,-18.9
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,ChMey9,fish,corallivore,corallivore,Chaetodon meyeri,Scrawled Butterflyfish,,-8.8,NA,-22.49,-15.2,-19.99
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CtStr10,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-16.18,NA,-23.28,-17.16,-21.87
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CtStr11,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-12.84,NA,-18.94,-14.71,-20.24
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CtStr12,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-11.39,NA,-17.38,-13.48,-18.1
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CtStr13,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-12.99,NA,-15.38,-12.64,-16.4
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,CtStr8,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-11.95,NA,-17.27,-14.36,-15.59
+Skinner et al. 2021,Indian Ocean,4.3953,73.3467,Maldives,Outer,CtStr9,fish,detritivore,detritivore,Ctenochaetus striatus,Striated surgeonfish,,-16.33,NA,-23.13,-17.67,-21.91
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,DeMa10,fish,pelagic.planktivore,pelagic.zooplanktivore,Decapterus macarellus,Mackerel scad,,-8.59,NA,-22.93,-26.18,-24.11
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,DeMa13,fish,pelagic.planktivore,pelagic.zooplanktivore,Decapterus macarellus,Mackerel scad,,-7.72,NA,-21.28,-23.92,-22.49
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,DeMa14,fish,pelagic.planktivore,pelagic.zooplanktivore,Decapterus macarellus,Mackerel scad,,-8.76,NA,-22.97,-25.37,-23.37
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,DeMa2,fish,pelagic.planktivore,pelagic.zooplanktivore,Decapterus macarellus,Mackerel scad,,-6.76,NA,-21.63,-23.01,-21.67
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,MyVio10,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.2,NA,-23,-19.68,-24.61
+Skinner et al. 2021,Indian Ocean,4.2925,73.3437,Maldives,Outer,MyVio11,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-11.64,NA,-22.07,-20.21,-22.61
+Skinner et al. 2021,Indian Ocean,4.2925,73.3437,Maldives,Outer,MyVio12,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-13.76,NA,-28.19,-21.51,-27.34
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,MyVio7,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-14.45,NA,-23.37,-22.79,-23.24
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,MyVio8,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.99,NA,-23.53,-21.03,-21.66
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,MyVio9,fish,nocturnal.reef.plankton,reef.zooplanktivore,Myripristis violacea,Lattice Soldierfish,,-12.6,NA,-22.06,-19.84,-22.66
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,UrDuv1,squid,pelagic.planktivore,pelagic.zooplanktivore,Uroteuthis duvauceli,Indian Ocean Squid,,-8.64,NA,-22,-24.56,-23.88
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,UrDuv3,squid,pelagic.planktivore,pelagic.zooplanktivore,Uroteuthis duvauceli,Indian Ocean Squid,,-8.7,NA,-23.72,-24.68,-23.57
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,UrDuv5,squid,pelagic.planktivore,pelagic.zooplanktivore,Uroteuthis duvauceli,Indian Ocean Squid,,-8.42,NA,-22.99,-24.36,-23.14
+Skinner et al. 2021,Indian Ocean,,,Maldives,Outer,UrDuv6,squid,pelagic.planktivore,pelagic.zooplanktivore,Uroteuthis duvauceli,Indian Ocean Squid,,-10.29,NA,-24.3,-26.09,-24.58
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,AcLeu10,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-14.05,NA,-19.36,-14.03,-15.69
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,AcLeu11,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-13.55,NA,-18.24,-14.64,-15.66
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,AcLeu12,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-17.49,NA,-22.38,-17.86,-18.88
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,AcLeu13,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-16.55,NA,-22.49,-16.68,-18.46
+Skinner et al. 2021,Indian Ocean,4.3628,73.3422,Maldives,Outer,AcLeu14,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-17.17,NA,-21.3,-17.31,-20.9
+Skinner et al. 2021,Indian Ocean,4.2505,73.3585,Maldives,Outer,AcLeu9,fish,algivore,herbivore,Acanthurus leucosternon,Blue surgeonfish,,-15.54,NA,-24.79,-15.69,-20
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-9.96,-13.28,-23.76,-18.23,-24.87
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-12.06,-15.4,-25.29,-20.03,-25.06
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-11.96,-17.53,-25.55,-20.67,-25.79
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-11.71,-16.48,-27.26,-21.49,-26.2
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-8.71,-11.59,-22.61,-19.69,-23.44
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-14.11,-15.71,-25.83,-20.43,-25.76
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-8.69,-16.96,-26.84,-21.53,-25.68
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-8.99,-13.97,-24.38,-19.31,-24.14
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,symb.HI,endosymbiont algae,Symbiodiniaceae,coral.symbiont,M capitata,endosymbiont algae,,-7.98,-13.99,-24.97,-19.31,-24.38
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-8.15,-12.5,-23.12,-20.02,-23.72
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-7.6,-12.93,-22.43,-19.1,-23.11
+Wall et al. 2021,Central Pacific,,,Oahu,experiment,host.HI,invertebrate,coral.host,coral.host,M capitata,coral animal,,-11.29,-15.44,-25.14,-21.82,-25.63
+Wall et al. LnO 2021,Central Pacific,21.43306°N,157.78667°W,Oahu,reef,plank,zooplankton,plankton,reef.plankton,zooplankton,,63-250um,-17.9,-21.81,-27.2,-24.88,-27.84
