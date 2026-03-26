@@ -481,7 +481,7 @@ All.train <- lda(Group~ Thr + Val + Leu + Phe + Lys, data = prod)
 All.train
 
 # save as txt file
-sink("output/Walak_LDA_Train_Info.txt")
+sink("output/LDA output/Walak_LDA_Train_Info.txt")
 print(All.train)
 sink()
 ```
@@ -498,18 +498,18 @@ Source.LDA <- ggord(All.train, prod$Group, arrow=0,
 
 # view plot, not used in manuscript
 Source.LDA
-dev.print(pdf, "figures/Fig.NA.Walak_LDA.pdf", height=6, width=8)
-dev.off()
+#dev.print(pdf, "figures/Fig.NA.Walak_LDA.pdf", height=6, width=8)
+#dev.off()
 
 # Write a csv file for the coefficients of LD1/2
 lda.info <- as.data.frame(All.train$scaling)
-write.csv(lda.info, "output/Walak_LDA_loadings.csv", row.names=FALSE)
+write.csv(lda.info, "output/LDA output/Walak_LDA_loadings.csv", row.names=FALSE)
 
 #Create a data frame with these LDA coordinates
 AllProdPredict <- data.frame(SampleID = prod$SampleID, Group = prod$Group, LD.class = "Source", predict(All.train)$x)
 
 #Write a csv file for the LDA coordinates
-write.csv(AllProdPredict, "output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
+write.csv(AllProdPredict, "output//LDA output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
 ```
 
 Classify consumers (giant trevally or Galapagos shark) as belonging to the three source groups. 
@@ -537,7 +537,7 @@ All.reclass
 ```{r stich dfs, echo=FALSE}
 ###### ###### write and compile data outputs from LDA
 # write a csv file for the consumer LDA info
-write.csv(cons.predict.data, "output/Walak_LDA_cons_pred.csv", row.names=FALSE)
+write.csv(cons.predict.data, "output/LDA output/Walak_LDA_cons_pred.csv", row.names=FALSE)
 
 # combine the consumer data and source LDA #
 LDA.df<-rbind(cons.predict.data, AllProdPredict)
@@ -793,8 +793,8 @@ Fish.LDA.Skin.McMa.Ram <- ggord(All.train, fish.raw.df$group.2, arrow=0,
   theme(legend.position = 'top')
 
 Fish.LDA.Skin.McMa.Ram
-dev.print(pdf, "figures/Fish.LDA.v1.pdf", height=7, width=8)
-dev.off()
+#dev.print(pdf, "figures/Fish.LDA.mass.pdf", height=7, width=8)
+#dev.off()
 
 #Create a data frame with these LDA coordinates
 AllfishPredict <- data.frame(SampleID = fish.raw.df$SampleID, 
@@ -869,7 +869,6 @@ LDA.pool<- rbind(fish, Walak.df)
 
 # combine with raw and mean-normalized data and rearrange
 LD.data <- merge(LDA.pool, LDA.df, by = "SampleID", all.x = TRUE)
-write.csv(LD.data, "output/LD.lit.data.csv")
 
 # remove extra column and rename the other
 LD.data<- LD.data %>% 
@@ -880,6 +879,10 @@ LD.data <- LD.data %>%
 
 LD.data$group.2<-droplevels(LD.data$group.2)
 LD.data$group.2<-factor(LD.data$group.2, levels=c("pelagic.zooplanktivore", "reef.zooplanktivore", "corallivore", "reef.predator", "herbivore"))
+
+write.csv(LD.data, "output/Lit.fish.training_LDAcomb.csv")
+
+########## Figure
 
 lda.3.colors<- c("lightblue3", "olivedrab4", "gold3")
 lda.3.lines<-c("lightblue4", "darkgreen","goldenrod")
@@ -901,7 +904,7 @@ LDA.scat.sorc <- ggplot(LD.data.source, aes(x = LD1, y = LD2))+
   theme_classic() + guides(lty = "none")
 
 LDA.scat.sorc
-dev.print(pdf, "figures/FigS6.LDA.scat.pdf", height=5.5, width=6.5)
+dev.print(pdf, "figures/Fig.S6.LDA.scat.pdf", height=5.5, width=6.5)
 dev.off()
 
 ```
