@@ -3,7 +3,7 @@
 # random effects: 0
 # fixed effects: 1
 # nested factors: FALSE
-# factors: SampleID
+# factors: SampleID_new
 # continuous effects: 0
 # error structure: Process only (MixSIR, for N = 1)
 # source$conc_dep: FALSE

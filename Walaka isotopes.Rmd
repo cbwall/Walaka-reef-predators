@@ -49,15 +49,17 @@ Use δ^13^C and δ^15^N biplots and perform `SIBER: Stable Isotope Bayesian Elli
 # load the data: library(dplyr)
 
 # load bulk data 
-All.data<-read.csv("data/Walak_Trevl_Gshark.csv")
+All.data<-read.csv("data/Walak_Trevl_Gshark_update.csv")
 
 # subset to be only bulk d13C and d15N
+
 df.bulk<- All.data %>%
-  select(Group, d13C_bulk, d15N_bulk)
+  filter(Data.source %in% c('This study')) %>% # only keep data from Walaka fishes
+  select(Group, d13C_bulk, d15N_bulk) # reduce to only bulk isotope data
 
 df.bulk<-na.omit(df.bulk) # remove NAs
 
-df.bulk$Group<-factor(df.bulk$Group, levels=c("GT", "GS")) # make factor level
+df.bulk$Group<-factor(df.bulk$Group, levels=c("GT", "GS")) # make factor level and order
 
 # make levels for Siber
 df.bulk$group<- ifelse(df.bulk$Group=="GT", "1", "2")
@@ -116,7 +118,7 @@ Siber.plot<-ggplot(data=df.bulk, aes(y=d15N_bulk, x=d13C_bulk))+
                    color = Group), 
                alpha = 0, 
                level = 0.4,
-               lty=2, size=0.9,
+               lty=2, linewidth=0.9,
                type = "norm",
                geom = "polygon") + 
   scale_color_manual(values=c("dodgerblue3", "orangered")) +
@@ -164,7 +166,7 @@ par(mar=c(2,4.5,0,0))
 siberDensityPlot(SEA.B, 
                  xticklabels= c("GT", "GS"), 
                  xlab = "",
-                 ylab = expression("SEA " ('‰' ^2) ),
+                 ylab = expression(paste("SEA " ('‰' ^2))),
                  bty = "L",
                  las = 1,
                  clr = SEA.col,
@@ -258,7 +260,8 @@ $$δ^{15}N_{SAA} = mean(δ^{15}N_{Phe}~ + δ^{15}N_{Lys})$$
 # load ggplot2 package: library(ggplot2)
 # load the data: library(dplyr)
 AA.indic <- All.data %>%
-  dplyr::select(Group, Residency.index, Residency, d15N_SAA, TPGlx_Phe, TPAla_Phe, PTS)
+  dplyr::select(Group, Residency, RI_corrected, RI_pre_storm, RI_post_storm_total, RI_post_4wk, RI_post_3mo,
+                d15N_SAA, TPGlx_Phe, TPAla_Phe, PTS)
 
 AA.indic<-na.omit(AA.indic)
 
@@ -277,7 +280,7 @@ Plot a histogram of residency. This will be used to motivate the binning as "ins
 - This is **Figure S3**.
 ```{r histogram, fig.cap="**Figure S3.** Histogram showing the frequency distribution of Residency Index values for giant trevally and Galapagos shark sampled for stable isotope analysis.", fig.dim=c(5,5), results='hide'}
 
-hist(AA.indic$Residency.index, main="", ylab="Number of Individuals", xlab="Residency Index", 
+hist(AA.indic$RI_corrected, main="", ylab="Number of Individuals", xlab="Residency Index", 
      breaks = seq(0,0.7, 0.035))
 box(lty = 1, col = 'black')
 
@@ -360,7 +363,7 @@ p.reg = list() # a list to save plots in
 ###### run the loop
 for (var in vars) {
 # fit linear model
-model <- lm(AA.indic[[var]] ~ AA.indic$Residency.index)
+model <- lm(AA.indic[[var]] ~ AA.indic$RI_corrected)
 summary_model <- summary(model)
   
 # save results in the results data frame
@@ -373,7 +376,7 @@ results <- rbind(results, data.frame(
   ))
   
 # plot using ggplot2
-  p.reg[[var]] <- ggplot(AA.indic, aes(x = Residency.index, y = .data[[var]])) +
+  p.reg[[var]] <- ggplot(AA.indic, aes(x = RI_corrected, y = .data[[var]])) +
     geom_point(aes(shape = Group), color="springgreen4", size = 2) +
     scale_shape_manual(values=c(19,17))+
     geom_smooth(method = "lm", se = TRUE, color = "springgreen4", fill = "springgreen4", alpha=0.2) +
@@ -398,7 +401,7 @@ reg<-grid.arrange(grobs= p.reg, ncol=1)
 Results from linear regressions of δ^15^N amino acid metrics and Residency Index.
 ```{r residence and d15N output}
 # display results for regressions
-print(results) # not significant for any, but nearly so for d15N-SAA (p=0.057)
+print(results) # significant for d15N-SAA (p=0.041)
 ```
 
 Combine boxplots and regression plots for δ^15^N amino acid data with residency index to produce 8 panel figure. This is compiled **Figure S4**.
@@ -413,7 +416,7 @@ dev.off()
 Here we use the δ^13^C values of essential amino acids to trace the determine the reliance of fishes on inshore vs. offshore production. 
 ```{r load data, echo=FALSE}
 # load data or Carbon EAAs
-df<-read.csv("data/Walak_Trevl_Gshark.csv")
+df<-read.csv("data/Walak_Trevl_Gshark_update.csv")
 
 # simplify nmes
 df<- df %>%
@@ -429,10 +432,10 @@ df<- df %>%
          Lysn = d13CLys.norm)
 
 # parse data
-raw.df<- df %>% dplyr::select(SampleID, Group, Thr, Val, Leu, Phe, Lys)
+raw.df<- df %>% dplyr::select(SampleID_new, Group, Thr, Val, Leu, Phe, Lys)
 raw.df<-na.omit(raw.df)
 
-norm.df<- df %>% dplyr::select(SampleID, Group, Thrn, Valn, Leun, Phen, Lysn)
+norm.df<- df %>% dplyr::select(SampleID_new, Group, Thrn, Valn, Leun, Phen, Lysn)
 norm.df<-na.omit(norm.df)
 ```
 
@@ -444,15 +447,15 @@ Source groups consisted of coral reef consumers, including fishes, plankton, and
 ```{r LDA}
 ########## LDA setup
 
-raw.df$SampleID<-as.factor(raw.df$SampleID)
+raw.df$SampleID_new<-as.factor(raw.df$SampleID_new)
 raw.df$Group<-as.factor(raw.df$Group)
 
 # remove all samples, keep source
 prod <- raw.df[!(raw.df$Group == "GT" |raw.df$Group == "GS"),]
 prod$Group<-droplevels(prod$Group) # drop sample levels
 
-#Run an LDA with a jackknifing model fit to look at error rate
-#'CV = TRUE' makes the LDA run a jackknifed - leave one out - model fit
+# Run an LDA with a jackknifing model fit to look at error rate
+# 'CV = TRUE' makes the LDA run a jackknifed - leave one out - model fit
 All.lda <- lda(Group ~Thr + Val + Leu + Phe + Lys, data = prod, CV = TRUE)
 ```
 
@@ -506,10 +509,10 @@ lda.info <- as.data.frame(All.train$scaling)
 write.csv(lda.info, "output/LDA output/Walak_LDA_loadings.csv", row.names=FALSE)
 
 #Create a data frame with these LDA coordinates
-AllProdPredict <- data.frame(SampleID = prod$SampleID, Group = prod$Group, LD.class = "Source", predict(All.train)$x)
+AllProdPredict <- data.frame(SampleID_new = prod$SampleID_new, Group = prod$Group, LD.class = "Source", predict(All.train)$x)
 
 #Write a csv file for the LDA coordinates
-write.csv(AllProdPredict, "output//LDA output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
+write.csv(AllProdPredict, "output/LDA output/Walak_LDA_sorc_coords.csv", row.names = FALSE)
 ```
 
 Classify consumers (giant trevally or Galapagos shark) as belonging to the three source groups. 
@@ -526,7 +529,8 @@ cons.df$Group<-droplevels(cons.df$Group) # drop sample levels
 
 cons.predict <- predict(object = All.train, newdata = cons.df)
 
-cons.predict.data <- data.frame(SampleID = cons.df$SampleID, Group = cons.df$Group, LD.class = cons.predict$class, cons.predict$x)
+cons.predict.data <- data.frame(SampleID_new = cons.df$SampleID_new, Group = cons.df$Group, 
+                                LD.class = cons.predict$class, cons.predict$x)
 
 All.reclass <- table(cons.df$Group, cons.predict$class) 
 All.reclass
@@ -543,7 +547,7 @@ write.csv(cons.predict.data, "output/LDA output/Walak_LDA_cons_pred.csv", row.na
 LDA.df<-rbind(cons.predict.data, AllProdPredict)
 
 # combine with raw and mean-normalized data and rearrange
-raw.norm.LD.data <- merge(df, LDA.df, by = "SampleID", all.x = TRUE)
+raw.norm.LD.data <- merge(df, LDA.df, by = "SampleID_new", all.x = TRUE)
 
 # remove extra column and rename the other
 raw.norm.LD.data<- raw.norm.LD.data %>% 
@@ -592,7 +596,7 @@ Check if normalization impacts the outcome of analysis. This "mean-centered" LDA
 # TLDR: no difference in assignment, some differences in ordination (LD1 >>>) and Coral looking more like Reef Plankton
 
 ########## LDA setup NORMALIZED
-norm.df$SampleID<-as.factor(norm.df$SampleID)
+norm.df$SampleID_new<-as.factor(norm.df$SampleID_new)
 norm.df$Group<-as.factor(norm.df$Group)
 
 # remove all samples, keep source
@@ -631,7 +635,7 @@ Source.LDA.norm <- ggord(All.train.norm, prod.norm$Group, arrow=0,
 
 
 #Create a data frame with these LDA coordinates NORMALIZED
-AllProdPredict.norm <- data.frame(SampleID = prod.norm$SampleID, Group = prod.norm$Group, 
+AllProdPredict.norm <- data.frame(SampleID_new = prod.norm$SampleID_new, Group = prod.norm$Group, 
                                   LD.class = "Source", predict(All.train.norm)$x)
 
 
@@ -644,7 +648,7 @@ cons.df.norm$Group<-droplevels(cons.df.norm$Group) # drop sample levels
 
 cons.predict.norm <- predict(object = All.train.norm, newdata = cons.df.norm)
 
-cons.predict.data.norm <- data.frame(SampleID = cons.df.norm$SampleID, Group = cons.df.norm$Group, 
+cons.predict.data.norm <- data.frame(SampleID_new = cons.df.norm$SampleID_new, Group = cons.df.norm$Group, 
                                 LD.class = cons.predict.norm$class, cons.predict.norm$x)
 
 All.reclass.norm <- table(cons.df.norm$Group, cons.predict.norm$class) 
@@ -658,7 +662,7 @@ All.reclass.norm
 LDA.df.norm<-rbind(cons.predict.data.norm, AllProdPredict.norm)
 
 # combine with raw and mean-normalized data and rearrange
-LD.data.norm <- merge(df, LDA.df.norm, by = "SampleID", all.x = TRUE)
+LD.data.norm <- merge(df, LDA.df.norm, by = "SampleID_new", all.x = TRUE)
 
 # remove extra column and rename the other
 LD.data.norm<- LD.data.norm %>% 
@@ -728,8 +732,8 @@ raw.df.lit$group.2<-droplevels(raw.df.lit$group.2) # drop sample levels
 
 ## mean center data
 # make an ID column and run the mean normalization procedure
-raw.df.lit$SampleID <- 1:nrow(raw.df.lit)
-for(i in 1:length(raw.df.lit$SampleID)){
+raw.df.lit$SampleID_new <- 1:nrow(raw.df.lit)
+for(i in 1:length(raw.df.lit$SampleID_new)){
   raw.df.lit$Thr.n[i] <- (raw.df.lit$Thr[i]-mean(as.numeric(raw.df.lit[i,9:12])))
   raw.df.lit$Val.n[i] <- (raw.df.lit$Val[i]-mean(as.numeric(raw.df.lit[i,9:12])))
   raw.df.lit$Phe.n[i] <- (raw.df.lit$Phe[i]-mean(as.numeric(raw.df.lit[i,9:12])))
@@ -753,15 +757,15 @@ fish.df$group.2<-droplevels(fish.df$group.2) # drop sample levels
 fish.df$source<-droplevels(fish.df$source) # drop sample levels
 
 ###### remove outliers
-fish.outliers <- fish.df %>% dplyr::filter((SampleID %in% c(28, 287, 297, 298, 500, 435, 436)))
-fish <- fish.df %>% dplyr::filter(!(SampleID %in% c(28, 287, 297, 298, 500, 435, 436)))
+fish.outliers <- fish.df %>% dplyr::filter((SampleID_new %in% c(28, 287, 297, 298, 500, 435, 436)))
+fish <- fish.df %>% dplyr::filter(!(SampleID_new %in% c(28, 287, 297, 298, 500, 435, 436)))
 write.csv(fish, "output/Lit.fish.training.csv")  
 
 #### simplified dataframes
 fish.raw.df<- fish %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
-                              Thr, Val, Phe, Leu, SampleID)
+                              Thr, Val, Phe, Leu, SampleID_new)
 fish.norm.df <- fish %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
-                              Thr.n, Val.n, Phe.n, Leu.n, SampleID)
+                              Thr.n, Val.n, Phe.n, Leu.n, SampleID_new)
 
 
 ##
@@ -797,7 +801,7 @@ Fish.LDA.Skin.McMa.Ram
 #dev.off()
 
 #Create a data frame with these LDA coordinates
-AllfishPredict <- data.frame(SampleID = fish.raw.df$SampleID, 
+AllfishPredict <- data.frame(SampleID_new = fish.raw.df$SampleID_new, 
                              species.taxa = fish.raw.df$species.taxa, 
                              group.2 = fish.raw.df$group.2, 
                              LD.class = "Source", 
@@ -817,7 +821,7 @@ fish.EAA.norm<- fish.norm.df %>% dplyr::select(Thr.n, Val.n, Phe.n, Leu.n)
 set.seed(51)
 EAA.perm.fish<-adonis2(fish.EAA.raw ~ group.2, data = fish.fac, 
                          permutations = 999, method = "euclidian", by = "terms")
-EAA.perm.fish # Groups: different at p=0.001, R2=0.61
+EAA.perm.fish # Groups: different at p=0.001, R2=0.48
 
 # run pairwise
 set.seed(138)
@@ -829,7 +833,7 @@ pairwise.adonis(fish.EAA.raw, factors = fish.raw.df$group.2, sim.method = "eucli
 set.seed(151)
 EAA.perm.fish.norm<-adonis2(fish.EAA.norm ~ group.2, data = fish.fac, 
                          permutations = 999, method = "euclidian", by = "terms")
-EAA.perm.fish.norm # Groups: different at p=0.001, R2=0.61
+EAA.perm.fish.norm # Groups: different at p=0.001, R2=0.20
 
 # run pairwise
 set.seed(38)
@@ -845,13 +849,13 @@ Walak.df<-raw.norm.df.lit[(raw.norm.df.lit$source=="Meyer et al. in review"),]
 
 #only raw data
 Walak.df.raw<- Walak.df %>% select(source, ocean, sample.type, group, group.2, species.taxa, 
-                              Thr, Val, Phe, Leu, SampleID)
+                              Thr, Val, Phe, Leu, SampleID_new)
 
 Walak.df.raw$group.2<-droplevels(Walak.df.raw$group.2) # drop sample levels
 
 Walak.df.predict <- predict(object = All.train, newdata = Walak.df.raw)
 
-Walak.df.predict.data <- data.frame(SampleID = Walak.df.raw$SampleID,
+Walak.df.predict.data <- data.frame(SampleID_new = Walak.df.raw$SampleID_new,
                                     group.2 = Walak.df.raw$group.2, 
                                     species.taxa = Walak.df.raw$species.taxa, 
                                     LD.class = Walak.df.predict$class, 
@@ -868,7 +872,7 @@ LDA.df<-rbind(Walak.df.predict.data, AllfishPredict)
 LDA.pool<- rbind(fish, Walak.df)
 
 # combine with raw and mean-normalized data and rearrange
-LD.data <- merge(LDA.pool, LDA.df, by = "SampleID", all.x = TRUE)
+LD.data <- merge(LDA.pool, LDA.df, by = "SampleID_new", all.x = TRUE)
 
 # remove extra column and rename the other
 LD.data<- LD.data %>% 
@@ -895,8 +899,8 @@ LDA.scat.sorc <- ggplot(LD.data.source, aes(x = LD1, y = LD2))+
              aes(fill = group.2, color = group.2, shape = group.2), alpha = 0.9) +
   stat_ellipse(type = "norm", level = 0.95, linewidth = 0.5, aes(lty = group.2, color = group.2))+
   ylim(-4.5,5)+ xlim(-6,6)+
-  scale_color_manual(values = lda.4.colors)+
-  scale_fill_manual(values = lda.4.colors)+
+  scale_color_manual(values = lda.3.colors)+
+  scale_fill_manual(values = lda.3.colors)+
   scale_shape_manual(values = c(24, 24, 24, 24))+
   scale_linetype_manual(values = c(2,2,2,2))+
   xlab("LD1 (82%)") + ylab("LD2 (18%)") +
@@ -919,18 +923,19 @@ First, load in sources and generate the means and SD for each normalized-EAA.
 ## MIXSIAR #####################################
 ################################################
 
+# NORMALIZED DATA
 # create a new data frame with desired columns for the consumers (mixtures)
-Mix.df.EAA <- raw.norm.LD.data %>%
-  dplyr::select("SampleID", "Group", "Thrn", "Valn", "Leun", "Phen", "Lysn")
+Mix.df.EAAn <- raw.norm.LD.data %>%
+  dplyr::select("SampleID_new", "Group", "Thrn", "Valn", "Leun", "Phen", "Lysn")
 
 # remove sources
-Mix.df.EAA.consm <- Mix.df.EAA[!(Mix.df.EAA$Group == "ReefPlankton" | Mix.df.EAA$Group == "PelagicPlankton" |
-                                  Mix.df.EAA$Group == "Coral"),]
-Mix.df.EAA.consm$Group <- droplevels(Mix.df.EAA.consm$Group)
-Mix.df.EAA.consm<-na.omit(Mix.df.EAA.consm)
+Mix.df.EAAn.consm <- Mix.df.EAAn[!(Mix.df.EAAn$Group == "ReefPlankton" | Mix.df.EAAn$Group == "PelagicPlankton" |
+                                  Mix.df.EAAn$Group == "Coral"),]
+Mix.df.EAAn.consm$Group <- droplevels(Mix.df.EAAn.consm$Group)
+Mix.df.EAAn.consm<-na.omit(Mix.df.EAAn.consm)
 
 # write and export a csv of the data frame
-write.csv(Mix.df.EAA.consm, "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv", row.names = FALSE)
+write.csv(Mix.df.EAAn.consm, "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv", row.names = FALSE)
 
 ###########
 # SOURCES #
@@ -940,84 +945,84 @@ write.csv(Mix.df.EAA.consm, "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv", ro
 # Reef and pelagic plankton, coral
 
 # create a new data frame with desired columns for the primary producers (sources)
-Source.df.EAA <-  Mix.df.EAA[(Mix.df.EAA$Group == "ReefPlankton" | Mix.df.EAA$Group == "PelagicPlankton" |
-                               Mix.df.EAA$Group == "Coral"),]
+Source.df.EAA <-  Mix.df.EAAn[(Mix.df.EAAn$Group == "ReefPlankton" | Mix.df.EAAn$Group == "PelagicPlankton" |
+                               Mix.df.EAAn$Group == "Coral"),]
 
-Source.df.EAA <- Source.df.EAA %>%
+Source.df.EAAn <- Source.df.EAA %>%
   dplyr::select("Group", "Thrn", "Valn", "Leun", "Phen", "Lysn")
 
 ##### source mean and SD
 ### Thr mean and SD
 # calculate mean Thr values for the sources
-mean.Thr.df.EAA <- aggregate(Thrn ~ Group, data = Source.df.EAA, FUN = mean)
-colnames(mean.Thr.df.EAA) <- c("Group", "Mean.Thrn")
+mean.Thr.df.EAAn <- aggregate(Thrn ~ Group, data = Source.df.EAAn, FUN = mean)
+colnames(mean.Thr.df.EAAn) <- c("Group", "Mean.Thrn")
 
 # calculate standard deviations of Thr values for the sources
-sd.Thr.df.EAA <- aggregate(Thrn ~ Group, data = Source.df.EAA, FUN = sd)
-colnames(sd.Thr.df.EAA) <- c("Group", "SD.Thrn")
+sd.Thr.df.EAAn <- aggregate(Thrn ~ Group, data = Source.df.EAAn, FUN = sd)
+colnames(sd.Thr.df.EAAn) <- c("Group", "SD.Thrn")
 
 ### Val mean and SD
 # calculate mean Val values for the sources
-mean.Val.df.EAA <- aggregate(Valn ~ Group, data = Source.df.EAA, FUN = mean)
-colnames(mean.Val.df.EAA) <- c("Group", "Mean.Valn")
+mean.Val.df.EAAn <- aggregate(Valn ~ Group, data = Source.df.EAAn, FUN = mean)
+colnames(mean.Val.df.EAAn) <- c("Group", "Mean.Valn")
 
 # calculate standard deviations of Val values for the sources
-sd.Val.df.EAA <- aggregate(Valn ~ Group, data = Source.df.EAA, FUN = sd)
-colnames(sd.Val.df.EAA) <- c("Group", "SD.Valn")
+sd.Val.df.EAAn <- aggregate(Valn ~ Group, data = Source.df.EAAn, FUN = sd)
+colnames(sd.Val.df.EAAn) <- c("Group", "SD.Valn")
 
 ### Leu mean and SD
 # calculate mean Leu values for the sources
-mean.Leu.df.EAA <- aggregate(Leun ~ Group, data = Source.df.EAA, FUN = mean)
-colnames(mean.Leu.df.EAA) <- c("Group", "Mean.Leun")
+mean.Leu.df.EAAn <- aggregate(Leun ~ Group, data = Source.df.EAAn, FUN = mean)
+colnames(mean.Leu.df.EAAn) <- c("Group", "Mean.Leun")
 
 # calculate standard deviations of Leu values for the sources
-sd.Leu.df.EAA <- aggregate(Leun ~ Group, data = Source.df.EAA, FUN = sd)
-colnames(sd.Leu.df.EAA) <- c("Group", "SD.Leun")
+sd.Leu.df.EAAn <- aggregate(Leun ~ Group, data = Source.df.EAAn, FUN = sd)
+colnames(sd.Leu.df.EAAn) <- c("Group", "SD.Leun")
 
 ### Phe mean and SD
 # calculate mean Phe values for the sources
-mean.Phe.df.EAA <- aggregate(Phen ~ Group, data = Source.df.EAA, FUN = mean)
-colnames(mean.Phe.df.EAA) <- c("Group", "Mean.Phen")
+mean.Phe.df.EAAn <- aggregate(Phen ~ Group, data = Source.df.EAAn, FUN = mean)
+colnames(mean.Phe.df.EAAn) <- c("Group", "Mean.Phen")
 
 # calculate standard deviations of Phe values for the sources
-sd.Phe.df.EAA <- aggregate(Phen ~ Group, data = Source.df.EAA, FUN = sd)
-colnames(sd.Phe.df.EAA) <- c("Group", "SD.Phen")
+sd.Phe.df.EAAn <- aggregate(Phen ~ Group, data = Source.df.EAAn, FUN = sd)
+colnames(sd.Phe.df.EAAn) <- c("Group", "SD.Phen")
 
 ### Lys mean and SD
 # calculate mean Phe values for the sources
-mean.Lys.df.EAA <- aggregate(Lysn ~ Group, data = Source.df.EAA, FUN = mean)
-colnames(mean.Lys.df.EAA) <- c("Group", "Mean.Lysn")
+mean.Lys.df.EAAn <- aggregate(Lysn ~ Group, data = Source.df.EAAn, FUN = mean)
+colnames(mean.Lys.df.EAAn) <- c("Group", "Mean.Lysn")
 
 # calculate standard deviations of Phe values for the sources
-sd.Lys.df.EAA <- aggregate(Lysn ~ Group, data = Source.df.EAA, FUN = sd)
-colnames(sd.Lys.df.EAA) <- c("Group", "SD.Lysn")
+sd.Lys.df.EAAn <- aggregate(Lysn ~ Group, data = Source.df.EAAn, FUN = sd)
+colnames(sd.Lys.df.EAAn) <- c("Group", "SD.Lysn")
 
 #### sample size
 # calculate the number of samples for each of the sources
-df.size.EAA <- aggregate(Lysn ~ Group, data = Source.df.EAA, FUN = length)
-colnames(df.size.EAA) <- c("Group", "Lys.size")
+df.size.EAAn <- aggregate(Lysn ~ Group, data = Source.df.EAAn, FUN = length)
+colnames(df.size.EAAn) <- c("Group", "Lys.size")
 
 # bind the values calculated above into one data frame
-source.agg.df.EAA <- cbind(df.size.EAA, 
-                           mean.Thr.df.EAA[2], sd.Thr.df.EAA[2], 
-                           mean.Val.df.EAA[2], sd.Val.df.EAA[2], 
-                           mean.Leu.df.EAA[2], sd.Leu.df.EAA[2], 
-                           mean.Phe.df.EAA[2], sd.Phe.df.EAA[2], 
-                           mean.Lys.df.EAA[2], sd.Lys.df.EAA[2])
-colnames(source.agg.df.EAA) <- c("", "n", "MeanThrn", "SDThrn", "MeanValn", "SDValn", 
+source.agg.df.EAAn <- cbind(df.size.EAAn, 
+                           mean.Thr.df.EAAn[2], sd.Thr.df.EAAn[2], 
+                           mean.Val.df.EAAn[2], sd.Val.df.EAAn[2], 
+                           mean.Leu.df.EAAn[2], sd.Leu.df.EAAn[2], 
+                           mean.Phe.df.EAAn[2], sd.Phe.df.EAAn[2], 
+                           mean.Lys.df.EAAn[2], sd.Lys.df.EAAn[2])
+colnames(source.agg.df.EAAn) <- c("", "n", "MeanThrn", "SDThrn", "MeanValn", "SDValn", 
                                  "MeanLeun", "SDLeun", "MeanPhen", "SDPhen", "MeanLysn", "SDLysn")
 
 # write and export a csv of the source data frame
-write.csv(source.agg.df.EAA, "output/EAAn_Mix/Walak_source.agg.df.EAAn.csv", row.names = FALSE, na = "")
+write.csv(source.agg.df.EAAn, "output/EAAn_Mix/Walak_source.agg.df.EAAn.csv", row.names = FALSE, na = "")
 ```
 
 Now, load in the consumers. We use a TDF of 0 (with SD of 0) assuming direct routing of EAAs to consumers.  
 ```{r load consumers}
 # load consumer data and assign factors
-# SampleID is a fixed factor
+# SampleID_new is a fixed factor
 cons.EAAn <- load_mix_data(filename = "output/EAAn_Mix/Walak_Mix.df.EAAn.consumer.csv",
                           iso_names = c("Thrn", "Valn", "Leun", "Phen", "Lysn"),
-                          factors = "SampleID",
+                          factors = "SampleID_new",
                           fac_random = FALSE,
                           fac_nested = FALSE,
                           cont_effects = NULL)
@@ -1041,16 +1046,16 @@ Set up here for the model (JAGs), run the model and save the output as an R.data
 # define the model and error structure and write JAGS model file
 # PROCESS ERROR ONLY - HAVE TO DO THIS WHEN RUNNING MIXTURE POINTS INDIVIDUALLY
 
-model_filename.EAA <- "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_fixed.txt"
+model_filename.EAAn <- "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_fixed.txt"
 resid_err <- FALSE
 process_err <- TRUE
-write_JAGS_model(model_filename.EAA, resid_err, process_err, cons.EAAn, source.EAAn)
+write_JAGS_model(model_filename.EAAn, resid_err, process_err, cons.EAAn, source.EAAn)
 
 ################################################
 ############# run the JAGS model
 
-set.seed(12)
-consm.jags.mod.EAAn <- run_model(run = "normal", cons.EAAn, source.EAAn, discr.EAAn, model_filename.EAA, alpha.prior = 1, resid_err, process_err)
+set.seed(15)
+consm.jags.mod.EAAn <- run_model(run = "long", cons.EAAn, source.EAAn, discr.EAAn, model_filename.EAAn, alpha.prior = 1, resid_err, process_err)
 
 #save RDS object of JAGS model
 saveRDS(consm.jags.mod.EAAn, file = "output/MixSIAR_models/EAAn_SampleID_model/MixSIAR_Model_SampleID_rjags_norm.rds")
@@ -1154,10 +1159,10 @@ samp.mix.EAAn.out.3 <- separate(SAMP.mixSIAR.EAAn.output.3, full.data,
 # parse the factors here into 3 columns
 new.cols.EAAn.3 <- stringr::str_split_fixed(samp.mix.EAAn.out.3$factor, "\\.", 3) %>%
   as.data.frame() %>%
-  setNames(c("proportion", "SampleID", "Source"))
+  setNames(c("proportion", "SampleID_new", "Source"))
 
 new.cols.EAAn.3 <- new.cols.EAAn.3 %>%
-  dplyr::select("SampleID", "Source")
+  dplyr::select("SampleID_new", "Source")
 
 # combine the new, separated columns with the data, verify the levels match, then remove "factor"
 Samp.out.cleaned.EAAn.3 <- cbind(new.cols.EAAn.3, samp.mix.EAAn.out.3[1:10])
@@ -1176,7 +1181,7 @@ Plot of three sources and their contribution to consumers. **This is Figure 6a**
 ################## ready to plot ################## 
 
 # bring in some metadata to make sense of it
-Mix.samp.EAAn.3 <- merge.data.frame(raw.norm.LD.data, Samp.out.cleaned.EAAn.3, by="SampleID")
+Mix.samp.EAAn.3 <- merge.data.frame(raw.norm.LD.data, Samp.out.cleaned.EAAn.3, by="SampleID_new")
 Mix.samp.EAAn.3$Source <- factor(Mix.samp.EAAn.3$Source, 
                                  levels = c("PelagicPlankton", "ReefPlankton", "Coral"))
 Mix.samp.EAAn.3$Mean<-as.numeric(Mix.samp.EAAn.3$Mean) 
@@ -1210,7 +1215,7 @@ Mix.samp.plot.EAAn.3 <- ggplot(data = Mix.samp.EAAn.3, aes(x = Group, y = Mean))
 
 #print and save
 Mix.samp.plot.EAAn.3
-dev.copy(pdf, "figures/Fig.6A.Walak_Fig.mixsiar.3sour.EAAn.rev2.pdf", width = 6, height = 6)
+dev.copy(pdf, "figures/Fig.6A.Walak_Fig.mixsiar.3sour.EAAn.rev2.pdf", width = 10, height = 6)
 dev.off()
 ```
 
@@ -1240,10 +1245,10 @@ samp.mix.EAAn.out <- separate(SAMP.mixSIAR.EAAn.output, full.data,
 # parse the factors here into 3 columns
 new.cols.EAAn <- stringr::str_split_fixed(samp.mix.EAAn.out$factor, "\\.", 3) %>%
   as.data.frame() %>%
-  setNames(c("proportion", "Source", "SampleID"))
+  setNames(c("proportion", "Source", "SampleID_new"))
 
 new.cols.EAAn <- new.cols.EAAn %>%
-  dplyr::select("SampleID", "Source")
+  dplyr::select("SampleID_new", "Source")
 
 # combine the new, separated columns with the data, verify the levels match, then remove "factor"
 Samp.out.cleaned.EAAn <- cbind(new.cols.EAAn, samp.mix.EAAn.out[1:10])
@@ -1258,18 +1263,18 @@ Using aggregated sources, plot the % contribution of inshore vs. offshore food w
 ```{r 2 sources MixSIAR plot, results='hide', fig.cap="**Figure. NA** Results of the MixSIAR Bayesian mixing model using δ^13^C~EAA~ fingerprints. Proportional contribution of inshore versus offshore resources to giant trevally and Galapagos sharks.", fig.dim=c(5,5)}
 samp.mix.df<-Samp.out.cleaned.EAAn
 samp.mix.reduced <- samp.mix.df %>% 
-  dplyr::select(SampleID, Source, Mean, SD)
+  dplyr::select(SampleID_new, Source, Mean, SD)
 
 ################# ################### ################ ################
 
 # bring in some metadata to make sense of it
-Mix.samp.EAAn.2 <- merge.data.frame(raw.norm.LD.data, samp.mix.reduced, by="SampleID")
+Mix.samp.EAAn.2 <- merge.data.frame(raw.norm.LD.data, samp.mix.reduced, by="SampleID_new")
 Mix.samp.EAAn.2$Source <- factor(Mix.samp.EAAn.2$Source, 
                                  levels = c("Offshore", "Inshore"))
 Mix.samp.EAAn.2$Mean<-as.numeric(Mix.samp.EAAn.2$Mean) 
 Mix.samp.EAAn.2$SD<-as.numeric(Mix.samp.EAAn.2$SD) 
 
-Mix.samp.EAAn.2.simp<- Mix.samp.EAAn.2 %>% select(SampleID, Group, LD.class, Source, Mean, SD)
+Mix.samp.EAAn.2.simp<- Mix.samp.EAAn.2 %>% select(SampleID_new, Group, LD.class, Source, Mean, SD)
 write.csv(Mix.samp.EAAn.2.simp, "output/Walak_Mix.samp.EAAn.2sources_simple.csv")
 
 ########### plot
@@ -1287,7 +1292,7 @@ Mix.samp.plot.EAAn.InOff <- ggplot(data = Mix.samp.EAAn.2, aes(x = Group, y = Me
 
 #print and save grouped with 2 categories
 Mix.samp.plot.EAAn.InOff
-dev.copy(pdf, "figures/Fig.NA.Walak_Fig.mixsiar.2sour.EAAn.rev.pdf", width = 4, height = 5)
+dev.copy(pdf, "figures/Fig.NA.Walak_Fig.mixsiar.2sour.EAAn.rev.pdf", width = 8, height = 5)
 dev.off()
 ```
 
@@ -1297,6 +1302,7 @@ Here we use the residency index, or the events where the consumers were recorded
 We show that there is a significant correlation between the residency index and the % inshore food web use, dominated by the Giant trevlly, which are best represented in our dataset. The relationship is significant R~2~ = 0.55 and *p*<0.001.
 ```{r residency by inshore proportion EAA}
 Inshore.df<-Mix.samp.EAAn.2[(Mix.samp.EAAn.2$Source=="Inshore"),]
+Inshore.df$Group<-droplevels(Inshore.df$Group)
 # write.csv(Inshore.df, "output/Inshore.df.csv")
 
 # group mean model
@@ -1304,23 +1310,23 @@ Inshore.mod<-lm(Mean~Group, data=Inshore.df) #p=0.610, no difference in % inshor
 Group.model<-anova(Inshore.mod)
 
 # residency by mean model
-Res.Inshore.mod<-lm(Mean~Residency.index, data=Inshore.df)
-Res.sum<-summary(Res.Inshore.mod) #R2-adj = 0.55,  #p<0.001
+Res.Inshore.mod<-lm(Mean~RI_corrected, data=Inshore.df)
+Res.sum<-summary(Res.Inshore.mod) #R2-adj = 0.37,  #p=0.373
 anova(Res.Inshore.mod)
 ```
 
 This relationship is unchanged by the presence or absence of sharks in the data. Here, just giant trevally are used in the model, Adj-R~2~ = 0.56 and *p*=0.002.
 ```{r GT residency by inshore proportion EAA}
 # residency model if GS removed
-Res.Inshore.mod.GT<-lm(Mean~Residency.index, data=Inshore.df[(Inshore.df$Group=="GT"),])
-Res.sum<-summary(Res.Inshore.mod.GT) #R2-adj = 0.56, p=0.002
+Res.Inshore.mod.GT<-lm(Mean~RI_corrected, data=Inshore.df[(Inshore.df$Group=="GT"),])
+Res.sum<-summary(Res.Inshore.mod.GT) #R2-adj = 0.03, p=0.266
 anova(Res.Inshore.mod.GT)
 ```
 
 #### Residency by proportion of inshore foodweb support 
 Plot the relationship for residency index for all sames (sharks and trevally). **This is Figure 6b**
 ```{r res by inshore proportion EAA, fig.cap="**Figure 6B.** Relationship between the proportion of inshore carbon sources utilized versus and the predator residency index. The correlation is significant (ANOVA, f = 20.943, p <0.001)", fig.dim=c(5,5)}
-Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
+Inshore.prop<-ggplot(Inshore.df, aes(x=RI_post_3mo, y=Mean)) +
   geom_smooth(method = lm, color="seagreen", alpha=0.2, fill="mediumseagreen")+
   geom_point(color="seagreen", size=2.5, aes(shape=Group))+
   ylab("Proportion Inshore-EAA")+
@@ -1328,6 +1334,6 @@ Inshore.prop.plant<-ggplot(Inshore.df, aes(x=Residency.index, y=Mean)) +
   annotate("text", x = 0.10, y = 0.68, label = "Adj-R2=0.55, p<0.001", size = 3) +
   theme_classic()
 
-Inshore.prop.plant
+Inshore.prop
 ggsave("figures/Fig.6B.Walak_Inshore.prop.EAAn.pdf", width=5, height=5)
 ```
